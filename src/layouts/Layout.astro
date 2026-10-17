@@ -1,0 +1,121 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Pulpas de Fruta al por Mayor en Bucaramanga | ArteFruta",
+  description = "Proveedor de pulpas de fruta 100% naturales congeladas a -18°C para restaurantes, hoteles y cafeterías en Bucaramanga. ¡Cotiza al por mayor por WhatsApp!"
+} = Astro.props;
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<!doctype html>
+<html lang="es" class="dark scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
+    <link rel="icon" href={`${base}/favicon.ico`} />
+    <link rel="canonical" href="https://atllas1981.github.io/pulpasdefrutaartefruta/" />
+    <meta name="robots" content="index, follow" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#181818" />
+
+    <!-- Open Graph / Meta -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content="https://atllas1981.github.io/pulpasdefrutaartefruta/" />
+    <meta property="og:image" content="https://atllas1981.github.io/pulpasdefrutaartefruta/favicon.svg" />
+    <meta property="og:locale" content="es_CO" />
+
+    <!-- Schema.org JSON-LD Local SEO WholesaleStore -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WholesaleStore",
+        "name": "Pulpas de Fruta ArteFruta",
+        "image": "https://atllas1981.github.io/pulpasdefrutaartefruta/favicon.svg",
+        "telephone": "+573177963888",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Centroabastos, Bodega 9 Local 111 (Punto de Venta) y Bodega 13 Local 3B (Planta)",
+          "addressLocality": "Bucaramanga",
+          "addressRegion": "Santander",
+          "addressCountry": "CO"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 7.1193,
+          "longitude": -73.1227
+        },
+        "areaServed": [
+          "Bucaramanga", "Floridablanca", "Girón", "Piedecuesta", 
+          "Cúcuta", "Valledupar", "Santa Marta", "Cartagena", "Barranquilla"
+        ],
+        "priceRange": "$$"
+      }
+    </script>
+
+    <!-- Google Fonts: Geist & Geist Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  </head>
+  <body class="bg-black text-white antialiased selection:bg-emerald-500/20 selection:text-emerald-300 min-h-screen">
+    <slot />
+
+    <!-- Smooth scroll (Lenis) and Scroll animations -->
+    <script>
+      import Lenis from 'lenis';
+      import gsap from 'gsap';
+      import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Initialize Lenis
+      const lenis = new Lenis({
+        duration: 1.1,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        orientation: 'vertical',
+        smoothWheel: true,
+      });
+
+      function raf(time: number) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+
+      // Connect Lenis to ScrollTrigger
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add((time) => {
+        lenis.raf(time * 1000);
+      });
+      gsap.ticker.lagSmoothing(0);
+
+      // IntersectionObserver for scroll-reveal
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      document.querySelectorAll('.scroll-reveal').forEach((el) => {
+        observer.observe(el);
+      });
+    </script>
+  </body>
+</html>

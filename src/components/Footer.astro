@@ -1,0 +1,92 @@
+---
+import { Picture } from 'astro:assets';
+import logoWebp from '../assets/images/logo-artefruta.webp';
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-black border-t border-neutral-800 text-neutral-400 py-16 px-4 sm:px-6 text-sm">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+    
+    <!-- Col 1: Brand & Bio -->
+    <div class="md:col-span-2">
+      <div class="flex items-center gap-2 mb-4">
+        <div class="h-9 px-3 py-1 rounded-full bg-white border border-neutral-200/90 shadow-md shadow-black/30 inline-flex items-center justify-center">
+          <Picture 
+            src={logoWebp} 
+            formats={['webp', 'png']}
+            widths={[200, 360]}
+            alt="ArteFruta Logo" 
+            class="h-6 w-auto object-contain filter contrast-105" 
+            loading="lazy"
+          />
+        </div>
+      </div>
+      <p class="text-neutral-400 text-sm leading-relaxed max-w-sm mb-6">
+        Comercializadora y procesadora de pulpas de fruta 100% naturales congeladas al núcleo a -18°C. Proveedor para gastronomía, repostería, cafeterías y coctelería en Colombia.
+      </p>
+      <div class="text-xs text-neutral-400 space-y-2.5">
+        <div class="flex items-start gap-2">
+          <span class="text-emerald-400 mt-0.5">🏪</span>
+          <div>
+            <strong class="text-neutral-200 font-medium">Punto de Venta y Atención:</strong>
+            <span class="block text-neutral-400">Bodega 9, Local 111 · Centroabastos, Bucaramanga</span>
+          </div>
+        </div>
+        <div class="flex items-start gap-2">
+          <span class="text-cyan-400 mt-0.5">🏭</span>
+          <div>
+            <strong class="text-neutral-200 font-medium">Planta de Producción:</strong>
+            <span class="block text-neutral-400">Bodega 13, Local 3B · Centroabastos, Bucaramanga</span>
+          </div>
+        </div>
+        <p class="text-neutral-500 pt-1">Santander · Colombia</p>
+      </div>
+    </div>
+
+    <!-- Col 2: Navigation -->
+    <div>
+      <p class="text-white text-xs font-semibold uppercase tracking-wider mb-4">
+        Navegación
+      </p>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="#sabores" class="hover:text-white transition-colors">Catálogo de Sabores</a></li>
+        <li><a href="#planta" class="hover:text-white transition-colors">Sede y Planta</a></li>
+        <li><a href="#faq" class="hover:text-white transition-colors">Preguntas Frecuentes</a></li>
+      </ul>
+    </div>
+
+    <!-- Col 3: Contact & Sales -->
+    <div>
+      <p class="text-white text-xs font-semibold uppercase tracking-wider mb-4">
+        Atención Comercial
+      </p>
+      <ul class="space-y-2.5 text-sm">
+        <li>
+          <a 
+            href="https://wa.me/573177963888" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="text-emerald-400 hover:text-emerald-300 font-medium flex items-center gap-1.5"
+          >
+            <span>WhatsApp: +57 317 7963888</span>
+          </a>
+        </li>
+        <li class="text-xs text-neutral-400">
+          Horario: Lunes a Sábado 5:00 AM – 4:00 PM
+        </li>
+        <li class="text-xs text-neutral-400">
+          Despachos: Bucaramanga, Norte de Santander, Cesar, Magdalena, Bolívar y Atlántico.
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="max-w-6xl mx-auto pt-8 border-t border-neutral-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-400">
+    <p>© {currentYear} Pulpas de fruta ArteFruta. Todos los derechos reservados.</p>
+    <div class="flex items-center gap-6">
+      <span>Calidad gastronómica garantizada</span>
+      <span>Cadena de frío -18°C</span>
+    </div>
+  </div>
+</footer>

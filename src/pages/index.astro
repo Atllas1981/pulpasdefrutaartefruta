@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import TaglineReveal from '../components/TaglineReveal.astro';
+import FlavorCatalog from '../components/FlavorCatalog.astro';
+import PhysicalPlant from '../components/PhysicalPlant.astro';
+import FAQ from '../components/FAQ.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+import Footer from '../components/Footer.astro';
+import FloatingWhatsApp from '../components/FloatingWhatsApp.astro';
+---
+
+<Layout 
+  title="Pulpas de Fruta al por Mayor en Bucaramanga | ArteFruta"
+  description="Proveedor de pulpas de fruta 100% naturales congeladas a -18°C para restaurantes, hoteles y cafeterías en Bucaramanga. ¡Cotiza al por mayor por WhatsApp!"
+>
+  <Navbar />
+  
+  <main>
+    <Hero />
+    <FlavorCatalog />
+    <TaglineReveal />
+    <PhysicalPlant />
+    <FAQ />
+    <FinalCTA />
+  </main>
+
+  <Footer />
+  <FloatingWhatsApp />
+</Layout>

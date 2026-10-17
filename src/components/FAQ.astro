@@ -1,0 +1,104 @@
+---
+interface FaqItem {
+  question: string;
+  answer: string;
+  bullets?: string[];
+}
+
+const faqs: FaqItem[] = [
+  {
+    question: "¿Cuál es el pedido mínimo para despachos o compras en el punto físico?",
+    answer: "No exigimos pedido mínimo en nuestro punto de venta y atención comercial en Centroabastos (Bodega 9, Local 111, Bucaramanga): puedes llevar desde una sola pulpa de 250g, 500g o 1.000g hasta pedidos por volumen para abastecer tu negocio. Para despachos a domicilio en el área metropolitana de Bucaramanga o envíos a otras ciudades, coordinamos directamente por WhatsApp según las necesidades de tu cocina o barra."
+  },
+  {
+    question: "¿Qué cobertura de envíos tienen y quién asume el costo del flete?",
+    answer: "Ofrecemos cobertura local e interdepartamental con protocolos que cuidan la cadena de frío:",
+    bullets: [
+      "Retiro en punto físico ($0 flete): puedes recoger tu pedido directamente en nuestro punto de venta en Centroabastos (Bodega 9, Local 111) sin costo de transporte.",
+      "Área metropolitana de Bucaramanga: entregas locales programadas en Bucaramanga, Floridablanca, Cañaveral, Girón y Piedecuesta.",
+      "Despachos interdepartamentales: envíos hacia Norte de Santander, Cesar, Magdalena, Bolívar y Atlántico.",
+      "Modalidad de flete: los fletes son asumidos por el cliente bajo modalidad de flete al cobro o contraentrega, conectándote con transportadoras aliadas que manejan tarifas preferenciales en frío."
+    ]
+  },
+  {
+    question: "¿Cuáles son las opciones de empaque y sus costos para proteger el producto?",
+    answer: "Disponemos de tres opciones de empaque térmico pensadas para cada distancia y horario de traslado:",
+    bullets: [
+      "Caja de cartón ($0 COP): sin costo adicional, recomendada para despachos locales o envíos en la madrugada con recepción y refrigeración inmediata.",
+      "Cava de icopor de segunda 8/10 ($50.000 COP): opción económica, limpia y reutilizable, con aislamiento térmico verificado de hasta 24 horas, ideal para viajes de media distancia.",
+      "Cava de icopor nueva 10/10 ($90.000 COP): estructura virgen de grado industrial con sellado hermético superior, ideal para viajes largos hacia la Costa Caribe y climas cálidos."
+    ]
+  },
+  {
+    question: "¿Cómo funciona la ultracongelación a -18°C al núcleo y qué ventajas ofrece en rendimiento?",
+    answer: "Nuestra fruta pasa por un choque térmico continuo que congela la pulpa pura hasta el núcleo a -18°C. Este método previene la formación de macrocristales de hielo, reteniendo el aroma fresco, color vivo, acidez natural y valor nutricional sin necesidad de conservantes ni químicos. Al ser 100% pulpa pura sin agua agregada, eliminas el 40% o más de merma por cáscaras y semillas, ahorras tiempo de pelado y estandarizas el sabor exacto de tus recetas los 365 días del año."
+  },
+  {
+    question: "¿En qué presentaciones y tamaños están disponibles las pulpas?",
+    answer: "Envasamos en tres formatos herméticos para adaptarnos a la operación diaria de tu establecimiento:",
+    bullets: [
+      "250g y 500g: porciones ideales para coctelería de autor, repostería fina, cafeterías y copas individuales de jugo.",
+      "1.000g (1 kg): presentación de alta rotación para licuadoras industriales, buffets y cocinas con alto volumen de servicio."
+    ]
+  },
+  {
+    question: "¿Por qué los precios fluctúan y se cotizan directamente por WhatsApp?",
+    answer: "Al trabajar con fruta 100% natural, los costos de materia prima responden a la oferta de cada ciclo de cosecha en el campo colombiano. A través de nuestra línea directa de WhatsApp (+57 317 7963888) te compartimos la lista de precios del día en tiempo real y descuentos por volumen para compras continuas en restaurantes, cafeterías, reposterías y coctelería."
+  },
+  {
+    question: "¿Ofrecen muestras para pruebas de rendimiento en cocina, repostería o barra?",
+    answer: "Sí. Entendemos que chefs, baristas, bartenders y encargados de producción necesitan comprobar los grados Brix, la textura y el rendimiento por vaso antes de comprar en volumen. Puedes escribirnos por WhatsApp para coordinar una prueba o visitarnos en nuestro punto de atención comercial en Centroabastos (Bodega 9, Local 111) para evaluar el catálogo de temporada."
+  },
+  {
+    question: "¿Cuál es la vida útil de las pulpas y cómo deben conservarse?",
+    answer: "Conservadas en congelador a -18°C, las pulpas tienen una vida útil garantizada de hasta 12 meses manteniendo intacto su sabor y aporte vitamínico sin conservantes añadidos. Una vez descongelada una porción, sugerimos conservarla en refrigeración y utilizarla dentro de las siguientes 48 horas."
+  }
+];
+---
+
+<section id="faq" class="py-24 sm:py-32 px-4 sm:px-6 bg-black">
+  <div class="max-w-4xl mx-auto">
+    
+    <div class="text-center mb-16 scroll-reveal">
+      <div class="text-xs font-semibold uppercase tracking-wider text-cyan-400 mb-3">
+        Respuestas para tu Negocio Gastronómico
+      </div>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mb-4 text-wrap:balance">
+        Preguntas frecuentes sobre pedidos, envíos y rendimiento
+      </h2>
+      <p class="text-base sm:text-lg text-neutral-400 max-w-xl mx-auto text-wrap:pretty">
+        Todo lo que necesitas saber sobre nuestras pulpas ultracongeladas, tiempos de entrega y protocolos de despacho.
+      </p>
+    </div>
+
+    <div class="space-y-4">
+      {faqs.map((faq, index) => (
+        <details 
+          class="group rounded-2xl border border-neutral-800 bg-[#181818] p-6 transition-all duration-300 open:border-neutral-700 open:bg-[#1F1F1F] scroll-reveal"
+        >
+          <summary class="flex cursor-pointer items-center justify-between text-base sm:text-lg font-semibold text-white list-none select-none">
+            <span class="pr-4">{faq.question}</span>
+            <span class="ml-2 flex-shrink-0 text-cyan-400 transition-transform duration-300 group-open:rotate-180">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </span>
+          </summary>
+          <div class="mt-4 pt-4 border-t border-neutral-800/80 text-sm sm:text-base text-neutral-300 leading-relaxed text-wrap:pretty">
+            <p>{faq.answer}</p>
+            {faq.bullets && faq.bullets.length > 0 && (
+              <ul class="mt-3 space-y-2 border-l-2 border-cyan-500/40 pl-3.5">
+                {faq.bullets.map((bullet) => (
+                  <li class="text-xs sm:text-sm text-neutral-300 leading-normal">
+                    {bullet}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </details>
+      ))}
+    </div>
+
+  </div>
+</section>
