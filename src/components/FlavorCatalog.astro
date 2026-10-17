@@ -279,11 +279,16 @@ const flavors: Flavor[] = [
               <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-black/70 mb-4 border border-neutral-800/90 flex items-center justify-center p-3 group-hover:border-neutral-600 transition-colors shadow-inner">
                 <Picture 
                   src={flavor.image} 
-                  formats={['webp', 'avif']}
-                  widths={[320, 640]}
+                  formats={['avif', 'webp']}
+                  widths={[240, 320, 480]}
+                  width={320}
+                  height={240}
+                  sizes="(max-width: 640px) 78vw, (max-width: 768px) 280px, 320px"
                   alt={`Pulpa de ${flavor.name} congelada al por mayor en Bucaramanga - ArteFruta`}
                   class="w-full h-full object-contain filter contrast-105 group-hover:scale-105 transition-transform duration-500 ease-out"
-                  loading="lazy"
+                  loading={index < 2 ? 'eager' : 'lazy'}
+                  decoding={index < 2 ? 'sync' : 'async'}
+                  fetchpriority={index === 0 ? 'high' : 'auto'}
                 />
                 
                 <!-- Temperature Badge -->
@@ -416,7 +421,12 @@ const flavors: Flavor[] = [
 
 <!-- Serialized flavors data for client-side modal and carousel navigation -->
 <script define:vars={{ flavorsData: flavors }}>
-  const carousel = document.getElementById('flavor-carousel');
+  // ─── Deferred catalog initialization ────────────────────────────────────────
+  // All carousel + modal logic runs only when #sabores is 200px from view.
+  // Removes ~8 KB of JS execution from the critical path, improving TBT.
+  // ─────────────────────────────────────────────────────────────────────
+  function initCatalog() {
+    const carousel = document.getElementById('flavor-carousel');
   const prevBtn = document.getElementById('carousel-prev-btn');
   const nextBtn = document.getElementById('carousel-next-btn');
   const counter = document.getElementById('carousel-counter');
@@ -689,6 +699,25 @@ const flavors: Flavor[] = [
     if (e.key === 'Escape' && !modal?.classList.contains('hidden')) closeModal();
   });
 
-  // Initial trigger
+  // Initial state
   updateCarouselState();
+  } // end initCatalog()
+
+  // Defer catalog init: only execute when #sabores section is near viewport.
+  // rootMargin '200px' pre-loads the JS 200px before user reaches the section.
+  const catalogSection = document.getElementById('sabores');
+  if (catalogSection) {
+    const catalogInitObserver = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          initCatalog();
+          catalogInitObserver.disconnect();
+        }
+      },
+      { rootMargin: '200px 0px' }
+    );
+    catalogInitObserver.observe(catalogSection);
+  } else {
+    initCatalog();
+  }
 </script>
