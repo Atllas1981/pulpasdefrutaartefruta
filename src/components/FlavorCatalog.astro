@@ -160,20 +160,20 @@ const flavors: Flavor[] = [
 ];
 ---
 
-<section id="sabores" class="py-20 sm:py-28 px-4 sm:px-6 bg-[#181818] border-t border-b border-neutral-800 relative">
+<section id="sabores" class="py-20 sm:py-28 px-4 sm:px-6 bg-[#080A09] border-t border-b border-[#313833] relative">
   <div class="max-w-7xl mx-auto">
     
     <!-- Section Header & Controls -->
     <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 scroll-reveal">
       <div class="max-w-2xl">
-        <div class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-emerald-400 mb-3">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <div class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#36C98F] mb-3">
+          <span class="w-2 h-2 rounded-full bg-[#36C98F] animate-pulse"></span>
           <span>Catálogo Técnico de Pulpas Ultracongeladas</span>
         </div>
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mb-3 text-wrap:balance">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#F4F3ED] font-heading mb-3 text-wrap:balance">
           10 sabores seleccionados para alta rotación en gastronomía y coctelería
         </h2>
-        <p class="text-base sm:text-lg text-neutral-400 text-wrap:pretty leading-relaxed">
+        <p class="text-base sm:text-lg text-[#B8C0BA] font-sans text-wrap:pretty leading-relaxed">
           Fichas técnicas estandarizadas con control de grados Brix y acidez. Disponibles en bolsas herméticas de 250g, 500g y 1.000g selladas a -18°C.
         </p>
       </div>
@@ -181,11 +181,11 @@ const flavors: Flavor[] = [
       <!-- Filters & Navigation Controls -->
       <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 w-full lg:w-auto">
         <!-- Filter Tabs ([Todas], [Clásicas], [Cítricas]) -->
-        <div class="inline-flex p-1.5 rounded-full border border-neutral-800 bg-[#1F1F1F] shadow-inner" role="tablist" aria-label="Filtrar por categoría">
+        <div class="inline-flex p-1.5 rounded-full border border-[#313833] bg-[#171B19] shadow-inner" role="tablist" aria-label="Filtrar por categoría">
           <button 
             type="button" 
             data-filter="todas"
-            class="catalog-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-white text-black shadow-sm"
+            class="catalog-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-[#F4F3ED] text-[#080A09] shadow-sm"
             role="tab"
             aria-selected="true"
           >
@@ -194,7 +194,7 @@ const flavors: Flavor[] = [
           <button 
             type="button" 
             data-filter="clasicas"
-            class="catalog-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 text-neutral-400 hover:text-white"
+            class="catalog-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 text-[#B8C0BA] hover:text-[#F4F3ED]"
             role="tab"
             aria-selected="false"
           >
@@ -203,7 +203,7 @@ const flavors: Flavor[] = [
           <button 
             type="button" 
             data-filter="citricas"
-            class="catalog-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 text-neutral-400 hover:text-white"
+            class="catalog-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 text-[#B8C0BA] hover:text-[#F4F3ED]"
             role="tab"
             aria-selected="false"
           >
@@ -214,13 +214,13 @@ const flavors: Flavor[] = [
         <!-- Carousel Hint & Navigation Controls -->
         <div class="flex items-center gap-3">
           <!-- Visual Drag / Slide Hint Badge -->
-          <div id="carousel-drag-hint" class="inline-flex items-center gap-2 text-xs font-semibold text-cyan-300 bg-cyan-950/60 border border-cyan-500/30 rounded-full px-3 py-1.5 shadow-sm transition-opacity duration-500 select-none">
+          <div id="carousel-drag-hint" class="inline-flex items-center gap-2 text-xs font-semibold text-[#55D6E8] bg-[#171B19] border border-[#55D6E8]/30 rounded-full px-3 py-1.5 shadow-sm transition-opacity duration-500 select-none">
             <span class="flex h-2 w-2 relative">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-400"></span>
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#55D6E8] opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-[#55D6E8]"></span>
             </span>
             <span>Desliza para explorar</span>
-            <svg class="w-3.5 h-3.5 text-cyan-300 animate-sway-x" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-3.5 h-3.5 text-[#55D6E8] animate-sway-x" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
             </svg>
           </div>
@@ -231,14 +231,14 @@ const flavors: Flavor[] = [
               id="carousel-prev-btn" 
               type="button" 
               aria-label="Ver sabor anterior en el carrusel"
-              class="w-10 h-10 rounded-full border border-neutral-700 bg-[#1F1F1F] text-neutral-300 hover:text-white hover:border-neutral-500 hover:bg-[#272727] active:scale-95 transition-all duration-200 flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed shadow-md"
+              class="w-10 h-10 rounded-full border border-[#313833] bg-[#171B19] text-[#B8C0BA] hover:text-[#F4F3ED] hover:border-[#55D6E8]/40 hover:bg-[#1f2422] active:scale-95 transition-all duration-200 flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed shadow-md"
             >
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
               </svg>
             </button>
 
-            <span class="font-mono-data text-xs font-semibold text-neutral-400 px-1 min-w-[44px] text-center" id="carousel-counter">
+            <span class="font-mono-data text-xs font-semibold text-[#B8C0BA] px-1 min-w-[44px] text-center" id="carousel-counter">
               1 / 10
             </span>
 
@@ -246,7 +246,7 @@ const flavors: Flavor[] = [
               id="carousel-next-btn" 
               type="button" 
               aria-label="Ver siguiente sabor en el carrusel"
-              class="w-10 h-10 rounded-full border border-neutral-700 bg-[#1F1F1F] text-neutral-300 hover:text-white hover:border-neutral-500 hover:bg-[#272727] active:scale-95 transition-all duration-200 flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed shadow-md"
+              class="w-10 h-10 rounded-full border border-[#313833] bg-[#171B19] text-[#B8C0BA] hover:text-[#F4F3ED] hover:border-[#55D6E8]/40 hover:bg-[#1f2422] active:scale-95 transition-all duration-200 flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed shadow-md"
             >
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -259,8 +259,8 @@ const flavors: Flavor[] = [
 
     <!-- Carousel Viewport & Track with Edge Fade Shadows -->
     <div class="relative -mx-4 sm:mx-0">
-      <div id="carousel-left-shadow" class="pointer-events-none absolute left-0 top-0 bottom-4 w-12 bg-gradient-to-r from-[#181818] to-transparent z-10 opacity-0 transition-opacity duration-300"></div>
-      <div id="carousel-right-shadow" class="pointer-events-none absolute right-0 top-0 bottom-4 w-12 bg-gradient-to-l from-[#181818] to-transparent z-10 opacity-100 transition-opacity duration-300"></div>
+      <div id="carousel-left-shadow" class="pointer-events-none absolute left-0 top-0 bottom-4 w-12 bg-gradient-to-r from-[#080A09] to-transparent z-10 opacity-0 transition-opacity duration-300"></div>
+      <div id="carousel-right-shadow" class="pointer-events-none absolute right-0 top-0 bottom-4 w-12 bg-gradient-to-l from-[#080A09] to-transparent z-10 opacity-100 transition-opacity duration-300"></div>
 
       <div 
         id="flavor-carousel" 
@@ -272,11 +272,11 @@ const flavors: Flavor[] = [
           <article 
             data-category={flavor.category}
             data-index={index + 1}
-            class="flavor-card group snap-start flex-none w-[78vw] sm:w-[280px] md:w-[300px] lg:w-[320px] rounded-2xl border border-neutral-800 bg-[#1F1F1F] hover:border-cyan-500/50 hover:bg-[#272727] transition-all duration-300 flex flex-col justify-between overflow-hidden p-4 sm:p-5 shadow-xl shadow-black/50"
+            class="flavor-card group snap-start flex-none w-[78vw] sm:w-[280px] md:w-[300px] lg:w-[320px] rounded-2xl border border-[#313833] bg-[#171B19] hover:border-[#36C98F]/40 hover:bg-[#1c221f] transition-all duration-300 flex flex-col justify-between overflow-hidden p-4 sm:p-5 shadow-xl shadow-black/50"
           >
             <div>
               <!-- Picture container with cold frost glow & -18°C badge -->
-              <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-black/70 mb-4 border border-neutral-800/90 flex items-center justify-center p-3 group-hover:border-neutral-600 transition-colors shadow-inner">
+              <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-[#080A09] mb-4 border border-[#313833]/80 flex items-center justify-center p-3 group-hover:border-[#36C98F]/30 transition-colors shadow-inner">
                 <Picture 
                   src={flavor.image} 
                   formats={['avif', 'webp']}
@@ -291,31 +291,31 @@ const flavors: Flavor[] = [
                   fetchpriority={index === 0 ? 'high' : 'auto'}
                 />
                 
-                <!-- Temperature Badge -->
-                <span class="absolute top-2.5 right-2.5 px-2.5 py-1 rounded-full text-xs font-mono-data font-semibold bg-cyan-950/85 text-cyan-300 border border-cyan-800/80 backdrop-blur-md shadow-sm">
+                <!-- Temperature Badge (Cian técnico) -->
+                <span class="absolute top-2.5 right-2.5 px-2.5 py-1 rounded-full text-xs font-mono-data font-semibold bg-[#080A09]/90 text-[#55D6E8] border border-[#55D6E8]/40 backdrop-blur-md shadow-sm">
                   -18°C
                 </span>
               </div>
 
               <!-- Commercial Flavor Name -->
               <div class="mb-1.5">
-                <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-cyan-300 transition-colors tracking-tight text-wrap:balance">
+                <h3 class="text-xl sm:text-2xl font-bold font-heading text-[#F4F3ED] group-hover:text-[#36C98F] transition-colors tracking-tight text-wrap:balance">
                   {flavor.name}
                 </h3>
               </div>
 
               <!-- Available Presentations in small line -->
-              <p class="text-xs text-neutral-400 font-mono-data mb-4">
+              <p class="text-xs text-[#B8C0BA] font-mono-data mb-4">
                 250g | 500g | 1.000g
               </p>
             </div>
 
             <!-- Card Actions -->
-            <div class="flex items-center gap-2 pt-3 border-t border-neutral-800/80">
+            <div class="flex items-center gap-2 pt-3 border-t border-[#313833]">
               <!-- Secondary Discrete Button: Ficha técnica 📄 -->
               <button
                 type="button"
-                class="open-modal-btn flex-1 py-2 px-3 rounded-full text-xs font-semibold text-neutral-300 hover:text-white bg-[#181818] hover:bg-[#272727] border border-neutral-700/80 active:scale-95 transition-all duration-200 text-center shadow-sm flex items-center justify-center gap-1.5 focus:outline-none focus:ring-2 focus:ring-cyan-500/40 cursor-pointer"
+                class="open-modal-btn flex-1 py-2 px-3 rounded-full text-xs font-semibold text-[#B8C0BA] hover:text-[#F4F3ED] bg-[#080A09] hover:bg-[#171B19] border border-[#313833] active:scale-95 transition-all duration-200 text-center shadow-sm flex items-center justify-center gap-1.5 focus:outline-none focus:ring-2 focus:ring-[#55D6E8]/40 cursor-pointer"
                 data-flavor-id={flavor.id}
                 aria-label={`Ver ficha técnica de pulpa de ${flavor.name}`}
               >
@@ -323,15 +323,15 @@ const flavors: Flavor[] = [
                 <span aria-hidden="true">📄</span>
               </button>
 
-              <!-- Primary Pill Button: Fondo blanco limpio con texto oscuro e ícono WhatsApp -->
+              <!-- Primary Pill Button: Verde esmeralda con texto oscuro y alto contraste -->
               <a 
                 href={`https://wa.me/573177963888?text=Hola%20ArteFruta,%20deseo%20cotizar%20la%20pulpa%20de%20${encodeURIComponent(flavor.name)}%20para%20mi%20negocio`}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="py-2 px-3.5 rounded-full text-xs font-semibold text-neutral-900 bg-white hover:bg-neutral-100 active:scale-95 transition-all duration-200 inline-flex items-center gap-1.5 shadow-md shadow-black/40 border border-neutral-200/60 shrink-0 focus:outline-none focus:ring-2 focus:ring-white/40"
+                class="py-2 px-3.5 rounded-full text-xs font-semibold text-[#080A09] bg-[#36C98F] hover:bg-[#2EB37E] active:scale-95 transition-all duration-200 inline-flex items-center gap-1.5 shadow-md shadow-[#36C98F]/20 border border-[#36C98F] shrink-0 focus:outline-none focus:ring-2 focus:ring-[#36C98F]/40"
                 aria-label={`Cotizar pulpa de ${flavor.name} por WhatsApp`}
               >
-                <svg class="w-3.5 h-3.5 text-emerald-600 fill-current" viewBox="0 0 24 24">
+                <svg class="w-3.5 h-3.5 text-[#080A09] fill-current" viewBox="0 0 24 24">
                   <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
                 </svg>
                 <span>Cotizar</span>
@@ -342,8 +342,8 @@ const flavors: Flavor[] = [
       </div>
 
       <!-- Carousel Progress Bar -->
-      <div class="mt-6 hidden sm:block w-full max-w-md mx-auto bg-neutral-800/80 rounded-full h-1 overflow-hidden">
-        <div id="carousel-progress" class="bg-cyan-400 h-full w-[10%] rounded-full transition-all duration-300"></div>
+      <div class="mt-6 hidden sm:block w-full max-w-md mx-auto bg-[#171B19] border border-[#313833] rounded-full h-1.5 overflow-hidden">
+        <div id="carousel-progress" class="bg-[#36C98F] h-full w-[10%] rounded-full transition-all duration-300"></div>
       </div>
     </div>
 
@@ -352,18 +352,18 @@ const flavors: Flavor[] = [
   <!-- Technical Modal for Detailed Flavor Inspection -->
   <div 
     id="tech-modal" 
-    class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-3 sm:p-4 transition-all duration-300"
+    class="fixed inset-0 z-50 hidden bg-[#080A09]/85 backdrop-blur-md flex items-center justify-center p-3 sm:p-4 transition-all duration-300"
     aria-hidden="true"
     role="dialog"
     aria-labelledby="modal-title"
   >
-    <div class="relative w-full max-w-xl rounded-2xl border border-neutral-700 bg-[#181818] shadow-2xl max-h-[85vh] overflow-y-auto overscroll-contain flex flex-col p-5 sm:p-7 focus:outline-none scrollbar-thin">
+    <div class="relative w-full max-w-xl rounded-2xl border border-[#313833] bg-[#171B19] shadow-2xl max-h-[85vh] overflow-y-auto overscroll-contain flex flex-col p-5 sm:p-7 focus:outline-none scrollbar-thin">
       <!-- Sticky Close Button Container to guarantee instant accessibility on mobile -->
       <div class="sticky top-0 z-20 flex justify-end pointer-events-none -mt-2 -mr-2 mb-2">
         <button 
           id="close-modal-btn"
           type="button" 
-          class="pointer-events-auto bg-[#272727]/90 hover:bg-[#313131] border border-neutral-600/80 text-neutral-300 hover:text-white p-2 rounded-full backdrop-blur-md transition-all duration-200 active:scale-95 shadow-lg focus:outline-none focus:ring-2 focus:ring-cyan-500/40 cursor-pointer"
+          class="pointer-events-auto bg-[#080A09]/90 hover:bg-[#313833] border border-[#313833] text-[#B8C0BA] hover:text-[#F4F3ED] p-2 rounded-full backdrop-blur-md transition-all duration-200 active:scale-95 shadow-lg focus:outline-none focus:ring-2 focus:ring-[#55D6E8]/40 cursor-pointer"
           aria-label="Cerrar ficha técnica"
         >
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -553,12 +553,12 @@ const flavors: Flavor[] = [
 
       // Update button visual states
       filterBtns.forEach(b => {
-        b.classList.remove('bg-white', 'text-black', 'shadow-sm');
-        b.classList.add('text-neutral-400');
+        b.classList.remove('bg-[#F4F3ED]', 'text-[#080A09]', 'shadow-sm');
+        b.classList.add('text-[#B8C0BA]');
         b.setAttribute('aria-selected', 'false');
       });
-      btn.classList.add('bg-white', 'text-black', 'shadow-sm');
-      btn.classList.remove('text-neutral-400');
+      btn.classList.add('bg-[#F4F3ED]', 'text-[#080A09]', 'shadow-sm');
+      btn.classList.remove('text-[#B8C0BA]');
       btn.setAttribute('aria-selected', 'true');
 
       // Filter visible cards
@@ -592,78 +592,78 @@ const flavors: Flavor[] = [
 
     modalContent.innerHTML = `
       <div class="mb-5 pr-6">
-        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-neutral-800 text-cyan-300 border border-neutral-700 mb-2.5">
-          <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#080A09] text-[#55D6E8] border border-[#313833] mb-2.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#55D6E8]"></span>
           <span>${item.categoryLabel} · 100% Fruta Natural a -18°C</span>
         </div>
-        <h3 id="modal-title" class="text-2xl sm:text-3xl font-bold text-white mb-2 tracking-tight text-wrap:balance">
-          Pulpa de ${item.name} ${item.variety ? `<span class="text-neutral-400 font-normal text-lg sm:text-xl">(${item.variety})</span>` : ''}
+        <h3 id="modal-title" class="text-2xl sm:text-3xl font-bold font-heading text-[#F4F3ED] mb-2 tracking-tight text-wrap:balance">
+          Pulpa de ${item.name} ${item.variety ? `<span class="text-[#B8C0BA] font-normal text-lg sm:text-xl">(${item.variety})</span>` : ''}
         </h3>
-        <p class="text-sm text-neutral-300 leading-relaxed text-wrap:pretty">
+        <p class="text-sm text-[#B8C0BA] font-sans leading-relaxed text-wrap:pretty">
           ${item.profile}
         </p>
       </div>
 
       <div class="grid grid-cols-2 gap-3 mb-5">
-        <div class="rounded-xl bg-black/80 border border-neutral-800 p-3 sm:p-3.5">
-          <span class="text-xs uppercase tracking-wider text-neutral-400 block mb-1">Grados Brix (°Bx)</span>
-          <span class="font-mono-data text-xl font-bold text-amber-300">${item.brix}</span>
-          <span class="text-[11px] text-neutral-500 block mt-1">Control de dulzor estándar</span>
+        <div class="rounded-xl bg-[#080A09] border border-[#313833] p-3 sm:p-3.5">
+          <span class="text-xs uppercase tracking-wider text-[#B8C0BA] block mb-1">Grados Brix (°Bx)</span>
+          <span class="font-mono-data text-xl font-bold text-[#F5B942]">${item.brix}</span>
+          <span class="text-[11px] text-[#B8C0BA]/70 block mt-1">Control de dulzor estándar</span>
         </div>
-        <div class="rounded-xl bg-black/80 border border-neutral-800 p-3 sm:p-3.5">
-          <span class="text-xs uppercase tracking-wider text-neutral-400 block mb-1">Acidez (pH)</span>
-          <span class="font-mono-data text-xl font-bold text-cyan-300">${item.ph}</span>
-          <span class="text-[11px] text-neutral-500 block mt-1">Estabilidad en barra y cocina</span>
+        <div class="rounded-xl bg-[#080A09] border border-[#313833] p-3 sm:p-3.5">
+          <span class="text-xs uppercase tracking-wider text-[#B8C0BA] block mb-1">Acidez (pH)</span>
+          <span class="font-mono-data text-xl font-bold text-[#55D6E8]">${item.ph}</span>
+          <span class="text-[11px] text-[#B8C0BA]/70 block mt-1">Estabilidad en barra y cocina</span>
         </div>
       </div>
 
       <div class="space-y-3 mb-6 text-sm">
-        <div class="rounded-xl bg-[#1F1F1F] border border-neutral-800/90 p-3.5 sm:p-4">
-          <strong class="text-white flex items-center gap-2 mb-1 font-semibold">
+        <div class="rounded-xl bg-[#080A09] border border-[#313833] p-3.5 sm:p-4">
+          <strong class="text-[#F4F3ED] flex items-center gap-2 mb-1 font-semibold">
             <span class="text-base" aria-hidden="true">🍹</span>
             <span>Aplicaciones Recomendadas:</span>
           </strong>
-          <p class="text-neutral-300 text-wrap:pretty leading-relaxed">${item.applications}</p>
+          <p class="text-[#B8C0BA] text-wrap:pretty leading-relaxed">${item.applications}</p>
         </div>
 
-        <div class="rounded-xl bg-[#1F1F1F] border border-neutral-800/90 p-3.5 sm:p-4">
-          <strong class="text-white flex items-center gap-2 mb-1 font-semibold">
+        <div class="rounded-xl bg-[#080A09] border border-[#313833] p-3.5 sm:p-4">
+          <strong class="text-[#F4F3ED] flex items-center gap-2 mb-1 font-semibold">
             <span class="text-base" aria-hidden="true">⚡</span>
             <span>Rendimiento Operativo:</span>
           </strong>
-          <p class="text-neutral-300 text-wrap:pretty leading-relaxed">${item.yield}</p>
+          <p class="text-[#B8C0BA] text-wrap:pretty leading-relaxed">${item.yield}</p>
         </div>
 
-        <div class="rounded-xl bg-[#1F1F1F] border border-neutral-800/90 p-3.5 sm:p-4">
-          <strong class="text-white flex items-center gap-2 mb-1 font-semibold">
+        <div class="rounded-xl bg-[#080A09] border border-[#313833] p-3.5 sm:p-4">
+          <strong class="text-[#F4F3ED] flex items-center gap-2 mb-1 font-semibold">
             <span class="text-base" aria-hidden="true">📦</span>
             <span>Presentaciones Disponibles:</span>
           </strong>
-          <p class="text-neutral-300 leading-relaxed">
-            Bolsas selladas de <strong>250g</strong>, <strong>500g</strong> y <strong>1.000g</strong> (1 kg). Conservación continua al núcleo a -18°C.
+          <p class="text-[#B8C0BA] leading-relaxed">
+            Bolsas selladas de <strong class="text-[#F4F3ED]">250g</strong>, <strong class="text-[#F4F3ED]">500g</strong> y <strong class="text-[#F4F3ED]">1.000g</strong> (1 kg). Conservación continua al núcleo a -18°C.
           </p>
         </div>
 
-        <div class="rounded-xl bg-[#1F1F1F] border border-neutral-800/90 p-3.5 sm:p-4">
-          <strong class="text-white flex items-center gap-2 mb-1 font-semibold">
+        <div class="rounded-xl bg-[#080A09] border border-[#313833] p-3.5 sm:p-4">
+          <strong class="text-[#F4F3ED] flex items-center gap-2 mb-1 font-semibold">
             <span class="text-base" aria-hidden="true">🏭</span>
             <span>Capacidad de Planta y Suministro:</span>
           </strong>
-          <p class="text-neutral-300 leading-relaxed">
-            Línea continua de empaque a <strong>30 pulpas/minuto</strong>. Suministro garantizado desde <strong>1 unidad hasta toneladas</strong> para canal HORECA, cafeterías, casinos y grandes superficies con entregas programadas.
+          <p class="text-[#B8C0BA] leading-relaxed">
+            Línea continua de empaque a <strong class="text-[#F5B942]">30 pulpas/minuto</strong>. Suministro garantizado desde <strong class="text-[#F4F3ED]">1 unidad hasta toneladas</strong> para canal HORECA, cafeterías, casinos y grandes superficies con entregas programadas.
           </p>
         </div>
       </div>
 
-      <div class="pt-4 border-t border-neutral-800 sticky bottom-0 bg-[#181818]/95 backdrop-blur-sm -mx-5 -mb-5 p-5 sm:-mx-7 sm:-mb-7 sm:p-7 rounded-b-2xl">
+      <div class="pt-4 border-t border-[#313833] sticky bottom-0 bg-[#171B19]/95 backdrop-blur-sm -mx-5 -mb-5 p-5 sm:-mx-7 sm:-mb-7 sm:p-7 rounded-b-2xl">
         <a 
           href="https://wa.me/573177963888?text=Hola%20ArteFruta,%20deseo%20cotizar%20la%20pulpa%20de%20${encodeURIComponent(item.name)}%20para%20mi%20negocio"
           target="_blank"
           rel="noopener noreferrer"
-          class="w-full inline-flex items-center justify-center gap-2.5 text-sm sm:text-base font-semibold text-slate-900 bg-white hover:bg-neutral-100 active:scale-[0.98] py-3.5 px-6 rounded-full transition-all duration-200 shadow-xl shadow-black/50 border border-neutral-200/70 focus:outline-none focus:ring-2 focus:ring-white/50"
+          class="w-full inline-flex items-center justify-center gap-2.5 text-sm sm:text-base font-semibold text-[#080A09] bg-[#36C98F] hover:bg-[#2EB37E] active:scale-[0.98] py-3.5 px-6 rounded-full transition-all duration-200 shadow-xl shadow-[#36C98F]/20 border border-[#36C98F] focus:outline-none focus:ring-2 focus:ring-[#36C98F]/50"
           aria-label="Cotizar pulpa de ${item.name} por WhatsApp"
         >
-          <svg class="w-4 h-4 text-emerald-600 fill-current shrink-0" viewBox="0 0 24 24">
+          <svg class="w-4 h-4 text-[#080A09] fill-current shrink-0" viewBox="0 0 24 24">
             <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
           </svg>
           <span>Cotizar este sabor por WhatsApp</span>

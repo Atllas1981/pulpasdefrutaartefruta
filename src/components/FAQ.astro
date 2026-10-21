@@ -56,17 +56,17 @@ const faqs: FaqItem[] = [
 ];
 ---
 
-<section id="faq" class="py-24 sm:py-32 px-4 sm:px-6 bg-black">
+<section id="faq" class="py-24 sm:py-32 px-4 sm:px-6 bg-[#080A09] border-t border-[#313833]">
   <div class="max-w-4xl mx-auto">
     
     <div class="text-center mb-16 scroll-reveal">
-      <div class="text-xs font-semibold uppercase tracking-wider text-cyan-400 mb-3">
+      <div class="text-xs font-semibold uppercase tracking-wider text-[#36C98F] mb-3">
         Respuestas para tu Negocio Gastronómico
       </div>
-      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mb-4 text-wrap:balance">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold font-heading tracking-tight text-[#F4F3ED] mb-4 text-wrap:balance">
         Preguntas frecuentes sobre pedidos, envíos y rendimiento
       </h2>
-      <p class="text-base sm:text-lg text-neutral-400 max-w-xl mx-auto text-wrap:pretty">
+      <p class="text-base sm:text-lg text-[#B8C0BA] font-sans max-w-xl mx-auto text-wrap:pretty">
         Todo lo que necesitas saber sobre nuestras pulpas ultracongeladas, tiempos de entrega y protocolos de despacho.
       </p>
     </div>
@@ -74,22 +74,22 @@ const faqs: FaqItem[] = [
     <div class="space-y-4">
       {faqs.map((faq, index) => (
         <details 
-          class="group rounded-2xl border border-neutral-800 bg-[#181818] p-6 transition-all duration-300 open:border-neutral-700 open:bg-[#1F1F1F] scroll-reveal"
+          class="group rounded-2xl border border-[#313833] bg-[#171B19] p-6 transition-all duration-300 open:border-[#36C98F]/40 open:bg-[#1c221f] scroll-reveal"
         >
-          <summary class="flex cursor-pointer items-center justify-between text-base sm:text-lg font-semibold text-white list-none select-none">
+          <summary class="flex cursor-pointer items-center justify-between text-base sm:text-lg font-semibold font-heading text-[#F4F3ED] list-none select-none">
             <span class="pr-4">{faq.question}</span>
-            <span class="ml-2 flex-shrink-0 text-cyan-400 transition-transform duration-300 group-open:rotate-180">
+            <span class="ml-2 flex-shrink-0 text-[#36C98F] transition-transform duration-300 group-open:rotate-180">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
             </span>
           </summary>
-          <div class="mt-4 pt-4 border-t border-neutral-800/80 text-sm sm:text-base text-neutral-300 leading-relaxed text-wrap:pretty">
+          <div class="mt-4 pt-4 border-t border-[#313833] text-sm sm:text-base text-[#B8C0BA] font-sans leading-relaxed text-wrap:pretty">
             <p>{faq.answer}</p>
             {faq.bullets && faq.bullets.length > 0 && (
-              <ul class="mt-3 space-y-2 border-l-2 border-cyan-500/40 pl-3.5">
+              <ul class="mt-3 space-y-2 border-l-2 border-[#36C98F]/40 pl-3.5">
                 {faq.bullets.map((bullet) => (
-                  <li class="text-xs sm:text-sm text-neutral-300 leading-normal">
+                  <li class="text-xs sm:text-sm text-[#B8C0BA] leading-normal">
                     {bullet}
                   </li>
                 ))}

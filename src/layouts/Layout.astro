@@ -64,24 +64,23 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       }
     </script>
 
-    <!-- Google Fonts: Geist (3 weights only — reduces payload ~35%) -->
+    <!-- Google Fonts: Manrope (Headings) & Inter (Interface) — Preconnect & Non-blocking Preload -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Non-blocking font load: media="print" trick defers render-blocking -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700&family=Geist+Mono:wght@400;600&display=swap"
-      rel="stylesheet"
-      media="print"
-      onload="this.media='all'"
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
     <noscript>
       <link
-        href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700&family=Geist+Mono:wght@400;600&display=swap"
         rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap"
       />
     </noscript>
   </head>
-  <body class="bg-black text-white antialiased selection:bg-emerald-500/20 selection:text-emerald-300 min-h-screen">
+  <body class="bg-[#080A09] text-[#F4F3ED] antialiased selection:bg-[#36C98F]/25 selection:text-[#36C98F] min-h-screen font-sans">
     <slot />
 
     <!-- Smooth scroll (Lenis) and Scroll animations -->

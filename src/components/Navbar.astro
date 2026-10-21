@@ -4,10 +4,15 @@ import logoWebp from '../assets/images/logo-artefruta.webp';
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6">
-  <nav class="mt-4 sm:mt-6 mx-auto max-w-5xl rounded-full border border-neutral-800/80 bg-[#181818]/85 backdrop-blur-xl px-4 sm:px-6 py-2.5 flex items-center justify-between shadow-2xl shadow-black/60 transition-all duration-300">
+  <nav class="mt-4 sm:mt-6 mx-auto max-w-5xl rounded-full border border-[#313833] bg-[#171B19]/90 backdrop-blur-xl px-4 sm:px-6 py-2.5 flex items-center justify-between shadow-2xl shadow-black/60 transition-all duration-300">
     
     <!-- Logo with Contrast Rounded Container (Rule B3/B4) -->
-    <a href="/" class="flex items-center gap-2 group" aria-label="ArteFruta Inicio">
+    <a 
+      href="#hero" 
+      class="flex items-center gap-2 group cursor-pointer" 
+      aria-label="Ir al inicio de ArteFruta"
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"
+    >
       <div class="h-9 sm:h-10 px-3 py-1 rounded-full bg-white border border-neutral-200/90 shadow-md shadow-black/30 flex items-center justify-center transition-all duration-300 group-hover:scale-105 active:scale-95 overflow-hidden">
         <Picture 
           src={logoWebp} 
@@ -26,24 +31,20 @@ import logoWebp from '../assets/images/logo-artefruta.webp';
     </a>
 
     <!-- Desktop Nav Links -->
-    <div class="hidden md:flex items-center gap-6 text-sm text-neutral-300">
-      <a href="#sabores" class="hover:text-white transition-colors">Catálogo de Sabores</a>
-      <a href="#planta" class="hover:text-white transition-colors">Sede y Planta</a>
-      <a href="#faq" class="hover:text-white transition-colors">Preguntas Frecuentes</a>
+    <div class="hidden md:flex items-center gap-6 text-sm text-[#B8C0BA] font-medium font-sans">
+      <a href="#sabores" class="hover:text-[#F4F3ED] transition-colors">Catálogo de Sabores</a>
+      <a href="#planta" class="hover:text-[#F4F3ED] transition-colors">Sede y Planta</a>
+      <a href="#faq" class="hover:text-[#F4F3ED] transition-colors">Preguntas Frecuentes</a>
     </div>
 
-    <!-- Desktop CTA Button -->
+    <!-- Desktop CTA Button: Verde Esmeralda #36C98F -->
     <div class="hidden sm:flex items-center gap-3">
       <a 
         href="https://wa.me/573177963888?text=Hola%20ArteFruta,%20deseo%20cotizar%20pulpas%20de%20fruta%20congeladas%20para%20mi%20negocio" 
         target="_blank" 
         rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 text-sm font-semibold text-black bg-white hover:bg-neutral-200 active:scale-[0.98] py-2 px-4 rounded-full transition-all duration-200 shadow-md shadow-white/5"
+        class="inline-flex items-center gap-2 text-sm font-semibold text-[#080A09] bg-[#36C98F] hover:bg-[#2EB37E] active:scale-[0.98] py-2 px-4 rounded-full transition-all duration-200 shadow-md shadow-[#36C98F]/20 font-sans"
       >
-        <!-- WhatsApp Icon -->
-        <svg class="w-4 h-4 text-emerald-600 fill-current" viewBox="0 0 24 24">
-          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-        </svg>
         <span>Cotizar Pedido</span>
       </a>
     </div>
@@ -52,14 +53,14 @@ import logoWebp from '../assets/images/logo-artefruta.webp';
     <button 
       id="mobile-menu-btn"
       type="button" 
-      class="sm:hidden relative w-9 h-9 flex items-center justify-center rounded-full text-neutral-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white/20"
+      class="sm:hidden relative w-9 h-9 flex items-center justify-center rounded-full text-[#B8C0BA] hover:text-[#F4F3ED] focus:outline-none focus:ring-2 focus:ring-[#36C98F]/30"
       aria-label="Abrir menú"
       aria-expanded="false"
     >
       <div class="w-5 h-4 flex flex-col justify-between">
-        <span id="line-top" class="w-full h-0.5 bg-white rounded-full transition-all duration-300 transform origin-left"></span>
-        <span id="line-mid" class="w-full h-0.5 bg-white rounded-full transition-all duration-300"></span>
-        <span id="line-bot" class="w-full h-0.5 bg-white rounded-full transition-all duration-300 transform origin-left"></span>
+        <span id="line-top" class="w-full h-0.5 bg-[#F4F3ED] rounded-full transition-all duration-300 transform origin-left"></span>
+        <span id="line-mid" class="w-full h-0.5 bg-[#F4F3ED] rounded-full transition-all duration-300"></span>
+        <span id="line-bot" class="w-full h-0.5 bg-[#F4F3ED] rounded-full transition-all duration-300 transform origin-left"></span>
       </div>
     </button>
   </nav>
@@ -67,23 +68,20 @@ import logoWebp from '../assets/images/logo-artefruta.webp';
   <!-- Mobile Overlay Menu (Fluid island expanded state) -->
   <div 
     id="mobile-menu"
-    class="sm:hidden hidden fixed inset-x-4 top-20 rounded-2xl border border-neutral-800 bg-[#181818]/95 backdrop-blur-2xl p-6 shadow-2xl shadow-black z-40 transition-all duration-300"
+    class="sm:hidden hidden fixed inset-x-4 top-20 rounded-2xl border border-[#313833] bg-[#171B19]/98 backdrop-blur-2xl p-6 shadow-2xl shadow-black z-40 transition-all duration-300"
   >
-    <div class="flex flex-col gap-4 text-base font-medium">
-      <a href="#sabores" class="mobile-nav-link text-neutral-300 hover:text-white py-2 border-b border-neutral-800">Catálogo de Sabores</a>
-      <a href="#planta" class="mobile-nav-link text-neutral-300 hover:text-white py-2 border-b border-neutral-800">Sede y Planta</a>
-      <a href="#faq" class="mobile-nav-link text-neutral-300 hover:text-white py-2 border-b border-neutral-800">Preguntas Frecuentes</a>
+    <div class="flex flex-col gap-4 text-base font-medium font-sans">
+      <a href="#sabores" class="mobile-nav-link text-[#B8C0BA] hover:text-[#F4F3ED] py-2 border-b border-[#313833]/60">Catálogo de Sabores</a>
+      <a href="#planta" class="mobile-nav-link text-[#B8C0BA] hover:text-[#F4F3ED] py-2 border-b border-[#313833]/60">Sede y Planta</a>
+      <a href="#faq" class="mobile-nav-link text-[#B8C0BA] hover:text-[#F4F3ED] py-2 border-b border-[#313833]/60">Preguntas Frecuentes</a>
       
       <a 
         href="https://wa.me/573177963888?text=Hola%20ArteFruta,%20deseo%20cotizar%20pulpas%20de%20fruta%20congeladas%20para%20mi%20negocio" 
         target="_blank" 
         rel="noopener noreferrer"
-        class="mt-2 w-full flex items-center justify-center gap-2 text-base font-semibold text-black bg-white hover:bg-neutral-200 py-3 rounded-full transition-colors"
+        class="mt-2 w-full flex items-center justify-center gap-2 text-base font-semibold text-[#080A09] bg-[#36C98F] hover:bg-[#2EB37E] py-3 rounded-full transition-colors"
       >
-        <svg class="w-5 h-5 text-emerald-600 fill-current" viewBox="0 0 24 24">
-          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-        </svg>
-        <span>Cotizar por WhatsApp</span>
+        <span>Cotizar Pedido</span>
       </a>
     </div>
   </div>

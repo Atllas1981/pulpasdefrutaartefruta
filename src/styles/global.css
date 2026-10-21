@@ -1,13 +1,38 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-heading: "Manrope", sans-serif;
+  --font-sans: "Inter", sans-serif;
   --font-mono: "Geist Mono", monospace;
-  --color-surface-base: #000000;
-  --color-surface-card: #181818;
-  --color-surface-card-hover: #1F1F1F;
-  --color-surface-border: #272727;
-  --color-surface-border-subtle: #313131;
+
+  /* Paleta cromática oficial B2B HORECA */
+  --color-brand-bg: #080A09;
+  --color-brand-surface: #171B19;
+  --color-brand-surface-hover: #1F2422;
+  --color-brand-border: #313833;
+  --color-brand-border-subtle: #242A26;
+  --color-brand-text: #F4F3ED;
+  --color-brand-text-muted: #B8C0BA;
+  --color-brand-emerald: #36C98F;
+  --color-brand-emerald-hover: #2EB37E;
+  --color-brand-cyan: #55D6E8;
+  --color-brand-amber: #F5B942;
+  --color-brand-whatsapp: #25D366;
+}
+
+:root {
+  --bg-main: #080A09;
+  --surface-card: #171B19;
+  --surface-card-hover: #1F2422;
+  --border-main: #313833;
+  --border-subtle: #242A26;
+  --text-main: #F4F3ED;
+  --text-muted: #B8C0BA;
+  --cta-emerald: #36C98F;
+  --cta-emerald-hover: #2EB37E;
+  --tech-cyan: #55D6E8;
+  --metric-amber: #F5B942;
+  --whatsapp-green: #25D366;
 }
 
 @layer base {
@@ -17,8 +42,8 @@
   
   html {
     font-family: var(--font-sans);
-    background-color: #000000;
-    color: #FFFFFF;
+    background-color: #080A09;
+    color: #F4F3ED;
     color-scheme: dark;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
@@ -26,26 +51,39 @@
   }
 
   body {
-    background-color: #000000;
-    color: #FFFFFF;
+    background-color: #080A09;
+    color: #F4F3ED;
     overflow-x: hidden;
     margin: 0;
     padding: 0;
+    font-family: var(--font-sans);
   }
 
   h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: #F4F3ED;
+    font-weight: 700;
     text-wrap: balance;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
   }
 
   p, li, blockquote {
+    font-family: var(--font-sans);
+    color: #B8C0BA;
     text-wrap: pretty;
   }
 
-  /* Monospace for numeric indicators */
+  strong, b {
+    color: #F4F3ED;
+    font-weight: 600;
+  }
+
+  /* Monospace / Tabular for numeric indicators */
   .font-mono-data {
-    font-family: var(--font-mono);
+    font-family: var(--font-sans);
     font-feature-settings: "tnum" 1;
+    font-variant-numeric: tabular-nums;
   }
 }
 

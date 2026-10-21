@@ -1,0 +1,332 @@
+/* Critical CSS for Above-the-Fold (Navbar + Hero) - B2B HORECA Official Design System */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #080A09;
+  color: #F4F3ED;
+  color-scheme: dark;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #080A09;
+  color: #F4F3ED;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Tabular numbers for metrics */
+.font-mono-data {
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  font-feature-settings: "tnum" 1;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Navbar Critical */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+@media (min-width: 640px) {
+  header {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+nav {
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 64rem;
+  border-radius: 9999px;
+  border: 1px solid #313833;
+  background-color: rgba(23, 27, 25, 0.9);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  padding: 0.625rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+}
+@media (min-width: 640px) {
+  nav {
+    margin-top: 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* Logo container & image */
+.logo-container {
+  height: 2.25rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(229, 229, 229, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+@media (min-width: 640px) {
+  .logo-container {
+    height: 2.5rem;
+  }
+}
+.logo-img {
+  height: 1.5rem;
+  width: auto;
+  object-fit: contain;
+}
+@media (min-width: 640px) {
+  .logo-img {
+    height: 1.75rem;
+  }
+}
+
+/* Hero Section */
+#hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 7rem;
+  padding-bottom: 4rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: #080A09;
+}
+@media (min-width: 640px) {
+  #hero {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+.hero-video-wrap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+#hero-video-desktop, #hero-video-mobile {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.05);
+  opacity: 0.40;
+  filter: brightness(0.85) contrast(1.1) saturate(1.1);
+}
+@media (min-width: 768px) {
+  #hero-video-desktop {
+    opacity: 0.45;
+    filter: brightness(0.9) contrast(1.1) saturate(1.1);
+  }
+}
+
+/* High-contrast video overlays: soften background details & video text while preserving vibrant fruit motion */
+.hero-overlay-1 {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(8, 10, 9, 0.85), rgba(8, 10, 9, 0.75), rgba(8, 10, 9, 0.95));
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.hero-overlay-2 {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(8, 10, 9, 0.75) 0%, rgba(8, 10, 9, 0.5) 60%, rgba(8, 10, 9, 0.95) 100%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 64rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* LCP Key Elements: H1 & Badge */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(85, 214, 232, 0.35);
+  background-color: rgba(23, 27, 25, 0.92);
+  padding: 0.375rem 0.875rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #55D6E8;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  margin-bottom: 1.5rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+  font-family: "Inter", sans-serif;
+}
+@media (min-width: 640px) {
+  .hero-badge {
+    font-size: 0.875rem;
+  }
+}
+
+.hero-title {
+  font-family: "Manrope", system-ui, -apple-system, sans-serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  max-width: 760px;
+  line-height: 1.12;
+  text-wrap: balance;
+  margin-bottom: 1.5rem;
+  color: #F4F3ED;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 1), 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+@media (min-width: 640px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 3.75rem;
+  }
+}
+
+.hero-subtitle {
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  font-size: 1rem;
+  color: #F4F3ED;
+  font-weight: 500;
+  max-width: 680px;
+  text-wrap: pretty;
+  line-height: 1.625;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 1), 0 1px 3px rgba(0, 0, 0, 0.9);
+}
+@media (min-width: 640px) {
+  .hero-subtitle {
+    font-size: 1.125rem;
+  }
+}
+
+/* Primary Commercial CTA Button (Verde Esmeralda #36C98F) */
+.btn-primary-cta {
+  background-color: #36C98F;
+  color: #080A09;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.625rem 1.25rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 200ms ease;
+  box-shadow: 0 10px 25px -5px rgba(54, 201, 143, 0.35);
+  text-decoration: none;
+}
+.btn-primary-cta:hover {
+  background-color: #2EB37E;
+  transform: translateY(-1px);
+}
+.btn-primary-cta:active {
+  transform: scale(0.98);
+}
+
+/* Secondary Button */
+.btn-secondary-action {
+  background-color: rgba(23, 27, 25, 0.7);
+  color: #F4F3ED;
+  border: 1px solid #313833;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.625rem 1.25rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 200ms ease;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  text-decoration: none;
+}
+.btn-secondary-action:hover {
+  border-color: #F4F3ED;
+  color: #FFFFFF;
+}
+
+/* Proof Strip */
+.proof-strip {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  max-width: 56rem;
+}
+@media (min-width: 640px) {
+  .proof-strip {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
+.proof-card {
+  border-radius: 1rem;
+  border: 1px solid #313833;
+  background-color: rgba(23, 27, 25, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 1rem;
+  text-align: left;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.6);
+}
+.proof-metric-cyan {
+  color: #55D6E8;
+  font-weight: 700;
+}
+.proof-metric-amber {
+  color: #F5B942;
+  font-weight: 700;
+}
+.proof-metric-emerald {
+  color: #36C98F;
+  font-weight: 700;
+}
+.proof-label {
+  color: #B8C0BA;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  margin-top: 0.25rem;
+}
