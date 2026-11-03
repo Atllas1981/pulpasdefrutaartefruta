@@ -7,8 +7,8 @@ interface Props {
 }
 
 const {
-  title = "Pulpas de Fruta al por Mayor en Bucaramanga | ArteFruta",
-  description = "Proveedor de pulpas de fruta 100% naturales congeladas a -18°C para restaurantes, hoteles y cafeterías en Bucaramanga. ¡Cotiza al por mayor por WhatsApp!"
+  title = "Pulpas de Fruta al por Mayor en Bucaramanga | Proveedor para Restaurantes y Barras",
+  description = "Proveedor mayorista de pulpas de fruta 100% naturales congeladas a -18°C en Bucaramanga. Suministro estandarizado para restaurantes, cafeterías, reposterías y barras de coctelería. Solicita muestras y cotiza al por mayor."
 } = Astro.props;
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
@@ -41,26 +41,53 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       {
         "@context": "https://schema.org",
         "@type": "WholesaleStore",
+        "@id": "https://atllas1981.github.io/pulpasdefrutaartefruta/#wholesalestore",
         "name": "Pulpas de Fruta ArteFruta",
+        "description": "Proveedor mayorista de pulpas de fruta 100% naturales congeladas a -18°C para restaurantes, cafeterías, hoteles, reposterías y barras de coctelería.",
         "image": "https://atllas1981.github.io/pulpasdefrutaartefruta/favicon.svg",
+        "url": "https://atllas1981.github.io/pulpasdefrutaartefruta/",
         "telephone": "+573177963888",
+        "priceRange": "$$",
+        "currenciesAccepted": "COP",
+        "paymentAccepted": "Cash, Credit Card, Bank Transfer, Nequi, Daviplata",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Centroabastos, Bodega 9 Local 111 (Punto de Venta) y Bodega 13 Local 3B (Planta)",
+          "streetAddress": "Centroabastos, Bodega 9 Local 111 (Punto de Venta) y Bodega 13 Local 3B (Planta de Producción)",
           "addressLocality": "Bucaramanga",
           "addressRegion": "Santander",
+          "postalCode": "680005",
           "addressCountry": "CO"
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": 7.1193,
-          "longitude": -73.1227
+          "latitude": 7.0872,
+          "longitude": -73.1614
         },
         "areaServed": [
-          "Bucaramanga", "Floridablanca", "Girón", "Piedecuesta", 
-          "Cúcuta", "Valledupar", "Santa Marta", "Cartagena", "Barranquilla"
-        ],
-        "priceRange": "$$"
+          {
+            "@type": "AdministrativeArea",
+            "name": "Área Metropolitana de Bucaramanga",
+            "containsPlace": [
+              { "@type": "City", "name": "Bucaramanga" },
+              { "@type": "City", "name": "Floridablanca" },
+              { "@type": "City", "name": "Girón" },
+              { "@type": "City", "name": "Piedecuesta" }
+            ]
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Cobertura Santander e Interdepartamental",
+            "containsPlace": [
+              { "@type": "City", "name": "Cúcuta" },
+              { "@type": "City", "name": "Barrancabermeja" },
+              { "@type": "City", "name": "San Gil" },
+              { "@type": "City", "name": "Valledupar" },
+              { "@type": "City", "name": "Santa Marta" },
+              { "@type": "City", "name": "Cartagena" },
+              { "@type": "City", "name": "Barranquilla" }
+            ]
+          }
+        ]
       }
     </script>
 

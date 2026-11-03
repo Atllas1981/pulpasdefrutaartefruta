@@ -106,6 +106,37 @@
   filter: blur(0);
 }
 
+/* Scroll hint horizontal nudge animation (GPU Accelerated - Zero Layout Reflow) */
+@keyframes scrollNudge {
+  0% {
+    transform: translateX(0);
+  }
+  30% {
+    transform: translateX(15px);
+  }
+  60% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-scroll-nudge,
+.animate-scroll-hint {
+  animation: scrollNudge 1.2s cubic-bezier(0.25, 1, 0.5, 1) both;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-scroll-nudge,
+  .animate-scroll-hint {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
 /* Lenis CSS */
 html.lenis, html.lenis body {
   height: auto;

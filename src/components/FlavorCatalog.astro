@@ -174,7 +174,7 @@ const flavors: Flavor[] = [
           10 sabores seleccionados para alta rotación en gastronomía y coctelería
         </h2>
         <p class="text-base sm:text-lg text-[#B8C0BA] font-sans text-wrap:pretty leading-relaxed">
-          Fichas técnicas estandarizadas con control de grados Brix y acidez. Disponibles en bolsas herméticas de 250g, 500g y 1.000g selladas a -18°C.
+          Fichas técnicas estandarizadas con control de grados Brix y acidez. Muestras refrigeradas para pruebas en cocina o barra disponibles en cada ficha. Bolsas herméticas de 250g, 500g y 1.000g selladas a -18°C.
         </p>
       </div>
 
@@ -185,7 +185,7 @@ const flavors: Flavor[] = [
           <button 
             type="button" 
             data-filter="todas"
-            class="catalog-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-[#F4F3ED] text-[#080A09] shadow-sm"
+            class="catalog-filter-btn min-h-[44px] px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-[#F4F3ED] text-[#080A09] shadow-sm inline-flex items-center justify-center cursor-pointer"
             role="tab"
             aria-selected="true"
           >
@@ -194,7 +194,7 @@ const flavors: Flavor[] = [
           <button 
             type="button" 
             data-filter="clasicas"
-            class="catalog-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 text-[#B8C0BA] hover:text-[#F4F3ED]"
+            class="catalog-filter-btn min-h-[44px] px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 text-[#B8C0BA] hover:text-[#F4F3ED] inline-flex items-center justify-center cursor-pointer"
             role="tab"
             aria-selected="false"
           >
@@ -203,7 +203,7 @@ const flavors: Flavor[] = [
           <button 
             type="button" 
             data-filter="citricas"
-            class="catalog-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 text-[#B8C0BA] hover:text-[#F4F3ED]"
+            class="catalog-filter-btn min-h-[44px] px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 text-[#B8C0BA] hover:text-[#F4F3ED] inline-flex items-center justify-center cursor-pointer"
             role="tab"
             aria-selected="false"
           >
@@ -214,7 +214,7 @@ const flavors: Flavor[] = [
         <!-- Carousel Hint & Navigation Controls -->
         <div class="flex items-center gap-3">
           <!-- Visual Drag / Slide Hint Badge -->
-          <div id="carousel-drag-hint" class="inline-flex items-center gap-2 text-xs font-semibold text-[#55D6E8] bg-[#171B19] border border-[#55D6E8]/30 rounded-full px-3 py-1.5 shadow-sm transition-opacity duration-500 select-none">
+          <div id="carousel-drag-hint" class="inline-flex items-center gap-2 text-xs font-semibold text-[#55D6E8] bg-[#171B19] border border-[#55D6E8]/30 rounded-full px-3 py-1.5 shadow-sm transition-opacity duration-500 select-none animate-sway-x">
             <span class="flex h-2 w-2 relative">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#55D6E8] opacity-75"></span>
               <span class="relative inline-flex rounded-full h-2 w-2 bg-[#55D6E8]"></span>
@@ -231,7 +231,7 @@ const flavors: Flavor[] = [
               id="carousel-prev-btn" 
               type="button" 
               aria-label="Ver sabor anterior en el carrusel"
-              class="w-10 h-10 rounded-full border border-[#313833] bg-[#171B19] text-[#B8C0BA] hover:text-[#F4F3ED] hover:border-[#55D6E8]/40 hover:bg-[#1f2422] active:scale-95 transition-all duration-200 flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed shadow-md"
+              class="w-11 h-11 min-h-[44px] min-w-[44px] rounded-full border border-[#313833] bg-[#171B19] text-[#B8C0BA] hover:text-[#F4F3ED] hover:border-[#55D6E8]/40 hover:bg-[#1f2422] active:scale-95 transition-all duration-200 flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed shadow-md cursor-pointer"
             >
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
@@ -246,7 +246,7 @@ const flavors: Flavor[] = [
               id="carousel-next-btn" 
               type="button" 
               aria-label="Ver siguiente sabor en el carrusel"
-              class="w-10 h-10 rounded-full border border-[#313833] bg-[#171B19] text-[#B8C0BA] hover:text-[#F4F3ED] hover:border-[#55D6E8]/40 hover:bg-[#1f2422] active:scale-95 transition-all duration-200 flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed shadow-md"
+              class="w-11 h-11 min-h-[44px] min-w-[44px] rounded-full border border-[#313833] bg-[#171B19] text-[#B8C0BA] hover:text-[#F4F3ED] hover:border-[#55D6E8]/40 hover:bg-[#1f2422] active:scale-95 transition-all duration-200 flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed shadow-md cursor-pointer"
             >
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -272,7 +272,7 @@ const flavors: Flavor[] = [
           <article 
             data-category={flavor.category}
             data-index={index + 1}
-            class="flavor-card group snap-start flex-none w-[78vw] sm:w-[280px] md:w-[300px] lg:w-[320px] rounded-2xl border border-[#313833] bg-[#171B19] hover:border-[#36C98F]/40 hover:bg-[#1c221f] transition-all duration-300 flex flex-col justify-between overflow-hidden p-4 sm:p-5 shadow-xl shadow-black/50"
+            class={`flavor-card group snap-start flex-none w-[78vw] sm:w-[280px] md:w-[300px] lg:w-[320px] rounded-2xl border border-[#313833] bg-[#171B19] hover:border-[#36C98F]/40 hover:bg-[#1c221f] transition-colors duration-300 flex flex-col justify-between overflow-hidden p-4 sm:p-5 shadow-xl shadow-black/50 ${index === 0 ? 'animate-scroll-nudge' : ''}`}
           >
             <div>
               <!-- Picture container with cold frost glow & -18°C badge -->
@@ -312,15 +312,15 @@ const flavors: Flavor[] = [
 
             <!-- Card Actions -->
             <div class="flex items-center gap-2 pt-3 border-t border-[#313833]">
-              <!-- Secondary Discrete Button: Ficha técnica 📄 -->
+              <!-- Secondary Discrete Button: Ficha técnica y muestra 🧪 -->
               <button
                 type="button"
-                class="open-modal-btn flex-1 py-2 px-3 rounded-full text-xs font-semibold text-[#B8C0BA] hover:text-[#F4F3ED] bg-[#080A09] hover:bg-[#171B19] border border-[#313833] active:scale-95 transition-all duration-200 text-center shadow-sm flex items-center justify-center gap-1.5 focus:outline-none focus:ring-2 focus:ring-[#55D6E8]/40 cursor-pointer"
+                class="open-modal-btn flex-1 min-h-[44px] py-2.5 px-3 rounded-full text-xs font-semibold text-[#B8C0BA] hover:text-[#55D6E8] bg-[#080A09] hover:bg-[#171B19] border border-[#313833] hover:border-[#55D6E8]/40 active:scale-95 transition-all duration-200 text-center shadow-sm flex items-center justify-center gap-1.5 focus:outline-none focus:ring-2 focus:ring-[#55D6E8]/40 cursor-pointer"
                 data-flavor-id={flavor.id}
-                aria-label={`Ver ficha técnica de pulpa de ${flavor.name}`}
+                aria-label={`Ver ficha técnica y solicitar muestra de pulpa de ${flavor.name}`}
               >
-                <span>Ficha técnica</span>
-                <span aria-hidden="true">📄</span>
+                <span>Ficha y muestra</span>
+                <span aria-hidden="true">🧪</span>
               </button>
 
               <!-- Primary Pill Button: Verde esmeralda con texto oscuro y alto contraste -->
@@ -328,7 +328,7 @@ const flavors: Flavor[] = [
                 href={`https://wa.me/573177963888?text=Hola%20ArteFruta,%20deseo%20cotizar%20la%20pulpa%20de%20${encodeURIComponent(flavor.name)}%20para%20mi%20negocio`}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="py-2 px-3.5 rounded-full text-xs font-semibold text-[#080A09] bg-[#36C98F] hover:bg-[#2EB37E] active:scale-95 transition-all duration-200 inline-flex items-center gap-1.5 shadow-md shadow-[#36C98F]/20 border border-[#36C98F] shrink-0 focus:outline-none focus:ring-2 focus:ring-[#36C98F]/40"
+                class="min-h-[44px] py-2.5 px-4 rounded-full text-xs font-semibold text-[#080A09] bg-[#36C98F] hover:bg-[#2EB37E] active:scale-95 transition-all duration-200 inline-flex items-center justify-center gap-1.5 shadow-md shadow-[#36C98F]/20 border border-[#36C98F] shrink-0 focus:outline-none focus:ring-2 focus:ring-[#36C98F]/40 cursor-pointer"
                 aria-label={`Cotizar pulpa de ${flavor.name} por WhatsApp`}
               >
                 <svg class="w-3.5 h-3.5 text-[#080A09] fill-current" viewBox="0 0 24 24">
@@ -363,7 +363,7 @@ const flavors: Flavor[] = [
         <button 
           id="close-modal-btn"
           type="button" 
-          class="pointer-events-auto bg-[#080A09]/90 hover:bg-[#313833] border border-[#313833] text-[#B8C0BA] hover:text-[#F4F3ED] p-2 rounded-full backdrop-blur-md transition-all duration-200 active:scale-95 shadow-lg focus:outline-none focus:ring-2 focus:ring-[#55D6E8]/40 cursor-pointer"
+          class="pointer-events-auto bg-[#080A09]/90 hover:bg-[#313833] border border-[#313833] text-[#B8C0BA] hover:text-[#F4F3ED] w-11 h-11 min-h-[44px] min-w-[44px] p-2.5 rounded-full backdrop-blur-md transition-all duration-200 active:scale-95 shadow-lg focus:outline-none focus:ring-2 focus:ring-[#55D6E8]/40 cursor-pointer flex items-center justify-center"
           aria-label="Cerrar ficha técnica"
         >
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -400,6 +400,37 @@ const flavors: Flavor[] = [
   }
   .animate-sway-x {
     animation: swayX 1.4s cubic-bezier(0.32, 0.72, 0, 1) infinite;
+  }
+
+  /* Vaivén horizontal sutil (scroll hint / nudge) - Hardware Accelerated (GPU) */
+  @keyframes scrollNudge {
+    0% {
+      transform: translateX(0);
+    }
+    30% {
+      transform: translateX(15px);
+    }
+    60% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  .animate-scroll-nudge,
+  .animate-scroll-hint {
+    animation: scrollNudge 1.2s cubic-bezier(0.25, 1, 0.5, 1) both;
+    will-change: transform;
+    backface-visibility: hidden;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-scroll-nudge,
+    .animate-scroll-hint {
+      animation: none !important;
+      transform: none !important;
+    }
   }
 
   /* Sleek scrollbar for the modal dialog */
@@ -512,28 +543,31 @@ const flavors: Flavor[] = [
 
   carousel?.addEventListener('scroll', updateCarouselState, { passive: true });
 
-  // Vaivén (peek & slide back motion cue) when catalog scrolls into view
-  let hasTriggeredVaiven = false;
-  const vaivenObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !hasTriggeredVaiven) {
-        hasTriggeredVaiven = true;
-        setTimeout(() => {
-          if (carousel && carousel.scrollLeft <= 10) {
-            // Smoothly peek forward 80px to hint at more cards
-            carousel.scrollBy({ left: 80, behavior: 'smooth' });
-            // Slide back to initial card creating the natural vaivén
-            setTimeout(() => {
-              carousel.scrollTo({ left: 0, behavior: 'smooth' });
-            }, 600);
+  // Vaivén horizontal sutil (scroll hint / nudge) en la primera tarjeta al entrar en vista
+  const firstCard = carousel?.querySelector('.flavor-card');
+  if (firstCard) {
+    let hasPlayedNudge = false;
+    const nudgeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !hasPlayedNudge) {
+          hasPlayedNudge = true;
+          // Si el usuario aún no ha desplazado el carrusel, aseguramos la ejecución fluida en GPU
+          if (carousel.scrollLeft <= 10) {
+            firstCard.classList.remove('animate-scroll-nudge');
+            void firstCard.offsetWidth;
+            firstCard.classList.add('animate-scroll-nudge');
           }
-        }, 400);
-      }
-    });
-  }, { threshold: 0.25 });
+          nudgeObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.15 });
 
-  if (carousel) {
-    vaivenObserver.observe(carousel);
+    nudgeObserver.observe(carousel);
+
+    // Liberar will-change tras completar los 1.2s para optimizar recursos en GPU
+    firstCard.addEventListener('animationend', () => {
+      firstCard.style.willChange = 'auto';
+    }, { once: true });
   }
 
   // Keyboard navigation for carousel
@@ -653,14 +687,38 @@ const flavors: Flavor[] = [
             Línea continua de empaque a <strong class="text-[#F5B942]">30 pulpas/minuto</strong>. Suministro garantizado desde <strong class="text-[#F4F3ED]">1 unidad hasta toneladas</strong> para canal HORECA, cafeterías, casinos y grandes superficies con entregas programadas.
           </p>
         </div>
+
+        <!-- Bloque B2B Muestras para Cocina o Barra -->
+        <div class="rounded-xl bg-[#080A09] border border-[#55D6E8]/30 p-3.5 sm:p-4 bg-gradient-to-r from-[#080A09] to-[#55D6E8]/5">
+          <strong class="text-[#55D6E8] flex items-center gap-2 mb-1.5 font-semibold text-xs sm:text-sm uppercase tracking-wider">
+            <span class="text-base" aria-hidden="true">🧪</span>
+            <span>Muestras Técnicas para Cocina y Barra:</span>
+          </strong>
+          <p class="text-[#B8C0BA] text-xs sm:text-sm leading-relaxed text-wrap:pretty">
+            Si lideras cocina, barra de coctelería o cafetería de especialidad, solicita una muestra refrigerada para verificar grados Brix, consistencia y acidez en tus propias recetas.
+          </p>
+        </div>
       </div>
 
-      <div class="pt-4 border-t border-[#313833] sticky bottom-0 bg-[#171B19]/95 backdrop-blur-sm -mx-5 -mb-5 p-5 sm:-mx-7 sm:-mb-7 sm:p-7 rounded-b-2xl">
+      <div class="pt-4 border-t border-[#313833] sticky bottom-0 bg-[#171B19]/95 backdrop-blur-sm -mx-5 -mb-5 p-5 sm:-mx-7 sm:-mb-7 sm:p-7 rounded-b-2xl flex flex-col gap-3">
+        <!-- Botón Secundario: Muestra de prueba para cocina o barra -->
+        <a 
+          href="https://wa.me/573177963888?text=${encodeURIComponent(`Hola ArteFruta, soy chef / barista / jefe de barra y me gustaría solicitar una muestra de prueba de pulpa de ${item.name} para cocina o barra en mi negocio.`)}"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-full min-h-[48px] inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold text-[#55D6E8] bg-[#080A09] hover:bg-[#55D6E8]/10 hover:border-[#55D6E8] border border-[#55D6E8]/40 active:scale-[0.98] py-3.5 px-5 rounded-full transition-all duration-200 shadow-sm text-center focus:outline-none focus:ring-2 focus:ring-[#55D6E8]/40 cursor-pointer"
+          aria-label="Solicitar muestra de prueba de pulpa de ${item.name} para cocina o barra"
+        >
+          <span aria-hidden="true">🧪</span>
+          <span>Solicitar muestra de prueba para cocina o barra</span>
+        </a>
+
+        <!-- Botón Primario: Cotización comercial mayorista -->
         <a 
           href="https://wa.me/573177963888?text=Hola%20ArteFruta,%20deseo%20cotizar%20la%20pulpa%20de%20${encodeURIComponent(item.name)}%20para%20mi%20negocio"
           target="_blank"
           rel="noopener noreferrer"
-          class="w-full inline-flex items-center justify-center gap-2.5 text-sm sm:text-base font-semibold text-[#080A09] bg-[#36C98F] hover:bg-[#2EB37E] active:scale-[0.98] py-3.5 px-6 rounded-full transition-all duration-200 shadow-xl shadow-[#36C98F]/20 border border-[#36C98F] focus:outline-none focus:ring-2 focus:ring-[#36C98F]/50"
+          class="w-full min-h-[48px] inline-flex items-center justify-center gap-2.5 text-xs sm:text-sm font-semibold text-[#080A09] bg-[#36C98F] hover:bg-[#2EB37E] active:scale-[0.98] py-3.5 px-6 rounded-full transition-all duration-200 shadow-xl shadow-[#36C98F]/20 border border-[#36C98F] focus:outline-none focus:ring-2 focus:ring-[#36C98F]/50 cursor-pointer"
           aria-label="Cotizar pulpa de ${item.name} por WhatsApp"
         >
           <svg class="w-4 h-4 text-[#080A09] fill-current shrink-0" viewBox="0 0 24 24">
