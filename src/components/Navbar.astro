@@ -1,47 +1,62 @@
 ---
-import { Picture } from 'astro:assets';
-import logoWebp from '../assets/images/logo-artefruta.webp';
+import { Picture } from "astro:assets";
+import logoWebp from "../assets/images/logo-artefruta.webp";
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6">
-  <nav class="mt-4 sm:mt-6 mx-auto max-w-5xl rounded-full border border-[#313833] bg-[#171B19]/90 backdrop-blur-xl px-4 sm:px-6 py-2.5 flex items-center justify-between shadow-2xl shadow-black/60 transition-all duration-300">
-    
-    <!-- Logo with Contrast Rounded Container (Rule B3/B4) -->
-    <a 
-      href="#hero" 
-      class="flex items-center gap-2 group cursor-pointer" 
+  <nav
+    class="mt-4 sm:mt-6 mx-auto max-w-5xl rounded-full border border-[#313833] bg-[#171B19]/90 backdrop-blur-xl px-4 sm:px-6 py-2.5 flex items-center justify-between shadow-2xl shadow-black/60 transition-all duration-300"
+  >
+    <!-- Logo with Circular Badge & Brand Wordmark -->
+    <a
+      href="#hero"
+      class="flex items-center gap-2.5 sm:gap-3.5 group cursor-pointer"
       aria-label="Ir al inicio de ArteFruta"
       onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"
     >
-      <div class="h-9 sm:h-10 px-3 py-1 rounded-full bg-white border border-neutral-200/90 shadow-md shadow-black/30 flex items-center justify-center transition-all duration-300 group-hover:scale-105 active:scale-95 overflow-hidden">
-        <Picture 
-          src={logoWebp} 
-          formats={['avif', 'webp']}
-          widths={[160, 320]}
-          width={160}
-          height={40}
-          alt="ArteFruta Pulpas 100% Natural" 
-          class="h-6 sm:h-7 w-auto object-contain filter contrast-105" 
+      <div
+        class="h-12 w-12 sm:h-14 sm:w-14 rounded-full bg-white border border-white/40 shadow-lg shadow-black/50 flex items-center justify-center p-1 transition-all duration-300 group-hover:scale-105 active:scale-95 shrink-0 overflow-hidden"
+      >
+        <Picture
+          src={logoWebp}
+          formats={["avif", "webp"]}
+          widths={[144, 288]}
+          width={144}
+          height={144}
+          alt="ArteFruta Pulpas 100% Natural"
+          class="w-full h-full object-contain scale-[1.08]"
           loading="eager"
           fetchpriority="high"
           decoding="sync"
         />
       </div>
-      <span class="sr-only">ArteFruta</span>
+      <span
+        class="font-heading font-extrabold text-xl sm:text-2xl text-[#F4F3ED] tracking-tight group-hover:text-[#36C98F] transition-colors select-none"
+      >
+        ArteFruta
+      </span>
     </a>
 
     <!-- Desktop Nav Links -->
-    <div class="hidden md:flex items-center gap-6 text-sm text-[#B8C0BA] font-medium font-sans">
-      <a href="#sabores" class="hover:text-[#F4F3ED] transition-colors">Catálogo de Sabores</a>
-      <a href="#planta" class="hover:text-[#F4F3ED] transition-colors">Sede y Planta</a>
-      <a href="#faq" class="hover:text-[#F4F3ED] transition-colors">Preguntas Frecuentes</a>
+    <div
+      class="hidden md:flex items-center gap-6 text-sm text-[#B8C0BA] font-medium font-sans"
+    >
+      <a href="#sabores" class="hover:text-[#F4F3ED] transition-colors"
+        >Catálogo de Sabores</a
+      >
+      <a href="#planta" class="hover:text-[#F4F3ED] transition-colors"
+        >Sede y Planta</a
+      >
+      <a href="#faq" class="hover:text-[#F4F3ED] transition-colors"
+        >Preguntas Frecuentes</a
+      >
     </div>
 
     <!-- Desktop CTA Button: Verde Esmeralda #36C98F -->
     <div class="hidden sm:flex items-center gap-3">
-      <a 
-        href="https://wa.me/573177963888?text=Hola%20ArteFruta,%20deseo%20cotizar%20pulpas%20de%20fruta%20congeladas%20para%20mi%20negocio" 
-        target="_blank" 
+      <a
+        href="https://wa.me/573177963888?text=Hola%20ArteFruta,%20deseo%20cotizar%20pulpas%20de%20fruta%20congeladas%20para%20mi%20negocio"
+        target="_blank"
         rel="noopener noreferrer"
         class="inline-flex items-center justify-center min-h-[44px] gap-2 text-sm font-semibold text-[#080A09] bg-[#36C98F] hover:bg-[#2EB37E] active:scale-[0.98] py-2.5 px-4 rounded-full transition-all duration-200 shadow-md shadow-[#36C98F]/20 font-sans cursor-pointer"
       >
@@ -50,34 +65,55 @@ import logoWebp from '../assets/images/logo-artefruta.webp';
     </div>
 
     <!-- Mobile Hamburger Button -->
-    <button 
+    <button
       id="mobile-menu-btn"
-      type="button" 
+      type="button"
       class="sm:hidden relative w-11 h-11 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-full text-[#B8C0BA] hover:text-[#F4F3ED] focus:outline-none focus:ring-2 focus:ring-[#36C98F]/30 cursor-pointer"
       aria-label="Abrir menú"
       aria-expanded="false"
     >
       <div class="w-5 h-4 flex flex-col justify-between">
-        <span id="line-top" class="w-full h-0.5 bg-[#F4F3ED] rounded-full transition-all duration-300 transform origin-left"></span>
-        <span id="line-mid" class="w-full h-0.5 bg-[#F4F3ED] rounded-full transition-all duration-300"></span>
-        <span id="line-bot" class="w-full h-0.5 bg-[#F4F3ED] rounded-full transition-all duration-300 transform origin-left"></span>
+        <span
+          id="line-top"
+          class="w-full h-0.5 bg-[#F4F3ED] rounded-full transition-all duration-300 transform origin-left"
+        ></span>
+        <span
+          id="line-mid"
+          class="w-full h-0.5 bg-[#F4F3ED] rounded-full transition-all duration-300"
+        ></span>
+        <span
+          id="line-bot"
+          class="w-full h-0.5 bg-[#F4F3ED] rounded-full transition-all duration-300 transform origin-left"
+        ></span>
       </div>
     </button>
   </nav>
 
   <!-- Mobile Overlay Menu (Fluid island expanded state) -->
-  <div 
+  <div
     id="mobile-menu"
     class="sm:hidden hidden fixed inset-x-4 top-20 rounded-2xl border border-[#313833] bg-[#171B19]/98 backdrop-blur-2xl p-6 shadow-2xl shadow-black z-40 transition-all duration-300"
   >
     <div class="flex flex-col gap-3 text-base font-medium font-sans">
-      <a href="#sabores" class="mobile-nav-link text-[#B8C0BA] hover:text-[#F4F3ED] min-h-[44px] flex items-center py-2.5 border-b border-[#313833]/60">Catálogo de Sabores</a>
-      <a href="#planta" class="mobile-nav-link text-[#B8C0BA] hover:text-[#F4F3ED] min-h-[44px] flex items-center py-2.5 border-b border-[#313833]/60">Sede y Planta</a>
-      <a href="#faq" class="mobile-nav-link text-[#B8C0BA] hover:text-[#F4F3ED] min-h-[44px] flex items-center py-2.5 border-b border-[#313833]/60">Preguntas Frecuentes</a>
-      
-      <a 
-        href="https://wa.me/573177963888?text=Hola%20ArteFruta,%20deseo%20cotizar%20pulpas%20de%20fruta%20congeladas%20para%20mi%20negocio" 
-        target="_blank" 
+      <a
+        href="#sabores"
+        class="mobile-nav-link text-[#B8C0BA] hover:text-[#F4F3ED] min-h-[44px] flex items-center py-2.5 border-b border-[#313833]/60"
+        >Catálogo de Sabores</a
+      >
+      <a
+        href="#planta"
+        class="mobile-nav-link text-[#B8C0BA] hover:text-[#F4F3ED] min-h-[44px] flex items-center py-2.5 border-b border-[#313833]/60"
+        >Sede y Planta</a
+      >
+      <a
+        href="#faq"
+        class="mobile-nav-link text-[#B8C0BA] hover:text-[#F4F3ED] min-h-[44px] flex items-center py-2.5 border-b border-[#313833]/60"
+        >Preguntas Frecuentes</a
+      >
+
+      <a
+        href="https://wa.me/573177963888?text=Hola%20ArteFruta,%20deseo%20cotizar%20pulpas%20de%20fruta%20congeladas%20para%20mi%20negocio"
+        target="_blank"
         rel="noopener noreferrer"
         class="mt-2 w-full min-h-[48px] flex items-center justify-center gap-2 text-base font-semibold text-[#080A09] bg-[#36C98F] hover:bg-[#2EB37E] py-3.5 rounded-full transition-colors cursor-pointer"
       >
@@ -88,38 +124,38 @@ import logoWebp from '../assets/images/logo-artefruta.webp';
 </header>
 
 <script>
-  const btn = document.getElementById('mobile-menu-btn');
-  const menu = document.getElementById('mobile-menu');
-  const lineTop = document.getElementById('line-top');
-  const lineMid = document.getElementById('line-mid');
-  const lineBot = document.getElementById('line-bot');
-  const links = document.querySelectorAll('.mobile-nav-link');
+  const btn = document.getElementById("mobile-menu-btn");
+  const menu = document.getElementById("mobile-menu");
+  const lineTop = document.getElementById("line-top");
+  const lineMid = document.getElementById("line-mid");
+  const lineBot = document.getElementById("line-bot");
+  const links = document.querySelectorAll(".mobile-nav-link");
 
   let isOpen = false;
 
-  btn?.addEventListener('click', () => {
+  btn?.addEventListener("click", () => {
     isOpen = !isOpen;
-    btn.setAttribute('aria-expanded', String(isOpen));
+    btn.setAttribute("aria-expanded", String(isOpen));
     if (isOpen) {
-      menu?.classList.remove('hidden');
-      lineTop?.classList.add('rotate-45', 'translate-y-1.5');
-      lineMid?.classList.add('opacity-0');
-      lineBot?.classList.add('-rotate-45', '-translate-y-1.5');
+      menu?.classList.remove("hidden");
+      lineTop?.classList.add("rotate-45", "translate-y-1.5");
+      lineMid?.classList.add("opacity-0");
+      lineBot?.classList.add("-rotate-45", "-translate-y-1.5");
     } else {
-      menu?.classList.add('hidden');
-      lineTop?.classList.remove('rotate-45', 'translate-y-1.5');
-      lineMid?.classList.remove('opacity-0');
-      lineBot?.classList.remove('-rotate-45', '-translate-y-1.5');
+      menu?.classList.add("hidden");
+      lineTop?.classList.remove("rotate-45", "translate-y-1.5");
+      lineMid?.classList.remove("opacity-0");
+      lineBot?.classList.remove("-rotate-45", "-translate-y-1.5");
     }
   });
 
-  links.forEach(l => {
-    l.addEventListener('click', () => {
+  links.forEach((l) => {
+    l.addEventListener("click", () => {
       isOpen = false;
-      menu?.classList.add('hidden');
-      lineTop?.classList.remove('rotate-45', 'translate-y-1.5');
-      lineMid?.classList.remove('opacity-0');
-      lineBot?.classList.remove('-rotate-45', '-translate-y-1.5');
+      menu?.classList.add("hidden");
+      lineTop?.classList.remove("rotate-45", "translate-y-1.5");
+      lineMid?.classList.remove("opacity-0");
+      lineBot?.classList.remove("-rotate-45", "-translate-y-1.5");
     });
   });
 </script>

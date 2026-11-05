@@ -75,30 +75,29 @@ nav {
 
 /* Logo container & image */
 .logo-container {
-  height: 2.25rem;
-  padding: 0.25rem 0.75rem;
+  height: 3rem;
+  width: 3rem;
+  padding: 0.25rem;
   border-radius: 9999px;
   background-color: #FFFFFF;
-  border: 1px solid rgba(229, 229, 229, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   overflow: hidden;
 }
 @media (min-width: 640px) {
   .logo-container {
-    height: 2.5rem;
+    height: 3.5rem;
+    width: 3.5rem;
   }
 }
 .logo-img {
-  height: 1.5rem;
-  width: auto;
+  height: 100%;
+  width: 100%;
   object-fit: contain;
-}
-@media (min-width: 640px) {
-  .logo-img {
-    height: 1.75rem;
-  }
+  transform: scale(1.08);
 }
 
 /* Hero Section */

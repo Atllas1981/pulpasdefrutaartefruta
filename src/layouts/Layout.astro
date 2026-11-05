@@ -21,6 +21,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
     <link rel="icon" href={`${base}/favicon.ico`} />
+    <link rel="apple-touch-icon" href={`${base}/apple-touch-icon.png`} />
     <link rel="canonical" href="https://atllas1981.github.io/pulpasdefrutaartefruta/" />
     <meta name="robots" content="index, follow" />
     <meta name="generator" content={Astro.generator} />
@@ -28,13 +29,24 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     <meta name="description" content={description} />
     <meta name="theme-color" content="#181818" />
 
-    <!-- Open Graph / Meta -->
+    <!-- Open Graph / Social -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content="https://atllas1981.github.io/pulpasdefrutaartefruta/" />
-    <meta property="og:image" content="https://atllas1981.github.io/pulpasdefrutaartefruta/favicon.svg" />
+    <meta property="og:image" content="https://atllas1981.github.io/pulpasdefrutaartefruta/images/og-artefruta.jpg" />
+    <meta property="og:image:width" content="1424" />
+    <meta property="og:image:height" content="752" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:alt" content="ArteFruta — Pulpas de fruta 100% naturales para gastronomía y coctelería en Colombia" />
     <meta property="og:locale" content="es_CO" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://atllas1981.github.io/pulpasdefrutaartefruta/images/og-artefruta.jpg" />
+    <meta name="twitter:image:alt" content="ArteFruta — Pulpas de fruta 100% naturales para gastronomía y coctelería en Colombia" />
 
     <!-- Schema.org JSON-LD Local SEO WholesaleStore -->
     <script type="application/ld+json">
@@ -44,7 +56,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         "@id": "https://atllas1981.github.io/pulpasdefrutaartefruta/#wholesalestore",
         "name": "Pulpas de Fruta ArteFruta",
         "description": "Proveedor mayorista de pulpas de fruta 100% naturales congeladas a -18°C para restaurantes, cafeterías, hoteles, reposterías y barras de coctelería.",
-        "image": "https://atllas1981.github.io/pulpasdefrutaartefruta/favicon.svg",
+        "image": "https://atllas1981.github.io/pulpasdefrutaartefruta/images/og-artefruta.jpg",
         "url": "https://atllas1981.github.io/pulpasdefrutaartefruta/",
         "telephone": "+573177963888",
         "priceRange": "$$",

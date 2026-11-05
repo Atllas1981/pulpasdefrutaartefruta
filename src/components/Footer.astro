@@ -2,24 +2,51 @@
 import { Picture } from 'astro:assets';
 import logoWebp from '../assets/images/logo-artefruta.webp';
 const currentYear = new Date().getFullYear();
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
-<footer class="bg-[#080A09] border-t border-[#313833] text-[#B8C0BA] pt-16 pb-28 sm:pb-24 px-4 sm:px-6 text-sm font-sans">
+<footer class="relative overflow-hidden bg-[#0b0f0e] border-t border-[#313833] text-[#B8C0BA] text-sm font-sans">
+
+  <!-- Texture layer: desktop (md+) / mobile -->
+  <!-- No mix-blend: overlay mode makes texture invisible on near-black bg -->
+  <div
+    class="footer-texture absolute inset-0 z-0 bg-cover bg-center"
+    style={`opacity: 0.18; filter: grayscale(80%); background-image: url('${base}/images/footer-bg-mobile.webp')`}
+    aria-hidden="true"
+  ></div>
+  <style define:vars={{ bgDesktop: `${base}/images/footer-bg-desktop.webp` }}>
+    @media (min-width: 768px) {
+      footer .footer-texture {
+        background-image: url(var(--bgDesktop));
+      }
+    }
+  </style>
+
+  <!-- Dark overlay for WCAG AA contrast (75% = texture visible, text legible) -->
+  <div class="absolute inset-0 z-[1] bg-[#0b0f0e]/75" aria-hidden="true"></div>
+
+  <!-- Real content floats above texture + overlay -->
+  <div class="relative z-10 pt-16 pb-28 sm:pb-24 px-4 sm:px-6">
   <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
     
     <!-- Col 1: Brand & Bio -->
     <div class="md:col-span-2">
-      <div class="flex items-center gap-2 mb-4">
-        <div class="h-9 px-3 py-1 rounded-full bg-white border border-neutral-200/90 shadow-md shadow-black/30 inline-flex items-center justify-center">
+      <div class="flex items-center gap-3.5 mb-4">
+        <div class="h-12 w-12 sm:h-14 sm:w-14 rounded-full bg-white border border-white/30 shadow-lg shadow-black/40 flex items-center justify-center p-1 shrink-0 overflow-hidden">
           <Picture 
             src={logoWebp} 
             formats={['webp', 'png']}
-            widths={[200, 360]}
+            widths={[144, 288]}
+            width={144}
+            height={144}
             alt="ArteFruta Logo" 
-            class="h-6 w-auto object-contain filter contrast-105" 
+            class="w-full h-full object-contain scale-[1.08]" 
             loading="lazy"
           />
         </div>
+        <span class="font-heading font-extrabold text-2xl text-[#F4F3ED] tracking-tight">
+          ArteFruta
+        </span>
       </div>
       <p class="text-[#B8C0BA] text-sm leading-relaxed max-w-sm mb-6">
         Comercializadora y procesadora de pulpas de fruta 100% naturales congeladas al núcleo a -18°C. Proveedor para gastronomía, repostería, cafeterías y coctelería en Colombia.
@@ -89,4 +116,5 @@ const currentYear = new Date().getFullYear();
       <span class="text-[#55D6E8]">Cadena de frío -18°C</span>
     </div>
   </div>
+  </div><!-- /relative z-10 -->
 </footer>
