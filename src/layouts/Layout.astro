@@ -7,7 +7,7 @@ interface Props {
 }
 
 const {
-  title = "Pulpas de Fruta al por Mayor en Bucaramanga | ArteFruta",
+  title = "ArteFruta | Pulpa de Fruta Natural en Bucaramanga",
   description = "Descubre ArteFruta: pulpas de fruta de calidad al por mayor en Bucaramanga. Variedad, sabor y calidad para tu negocio."
 } = Astro.props;
 
@@ -15,7 +15,7 @@ const {
 // og:title ≤ 60 chars, og:description ≤ 150 chars
 const ogTitle = title.length <= 60
   ? title
-  : "Pulpas de Fruta al por Mayor en Bucaramanga | ArteFruta";
+  : "ArteFruta | Pulpa de Fruta Natural en Bucaramanga";
 const ogDescription = description.length <= 150
   ? description
   : "Descubre ArteFruta: pulpas de fruta de calidad al por mayor en Bucaramanga. Variedad, sabor y calidad para tu negocio.";
@@ -51,6 +51,7 @@ const ogAlt = "ArteFruta, pulpas de fruta al por mayor en Bucaramanga";
 
     <!-- SEO primario -->
     <title>{title}</title>
+    <meta name="title" content={title} />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
     <meta name="robots" content="index, follow" />
