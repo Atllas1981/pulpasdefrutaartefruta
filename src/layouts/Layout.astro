@@ -7,11 +7,26 @@ interface Props {
 }
 
 const {
-  title = "Pulpas de Fruta al por Mayor en Bucaramanga | Proveedor para Restaurantes y Barras",
-  description = "Proveedor mayorista de pulpas de fruta 100% naturales congeladas a -18°C en Bucaramanga. Suministro estandarizado para restaurantes, cafeterías, reposterías y barras de coctelería. Solicita muestras y cotiza al por mayor."
+  title = "ArteFruta | Pulpa de Fruta 100% Natural en Bucaramanga",
+  description = "Proveedor de pulpas de fruta congeladas a -18°C para gastronomía, repostería y sector Horeca en Bucaramanga y Santander."
 } = Astro.props;
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+// URL base canónica — Astro.site = 'https://atllas1981.github.io'
+const siteOrigin = Astro.site ?? new URL('https://atllas1981.github.io');
+const canonicalURL = new URL(
+  Astro.url.pathname,
+  siteOrigin
+).href;
+
+// OG image — URL absoluta completa incluyendo base path del repositorio
+const ogImageUrl = new URL(
+  `pulpasdefrutaartefruta/images/og-artefruta.jpg`,
+  siteOrigin
+).href;
+
+const ogAlt = "ArteFruta — Pulpas de fruta 100% naturales para gastronomía y coctelería en Colombia";
 ---
 
 <!doctype html>
@@ -19,89 +34,93 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
     <link rel="icon" href={`${base}/favicon.ico`} />
     <link rel="apple-touch-icon" href={`${base}/apple-touch-icon.png`} />
-    <link rel="canonical" href="https://atllas1981.github.io/pulpasdefrutaartefruta/" />
-    <meta name="robots" content="index, follow" />
-    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO primario -->
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <meta name="robots" content="index, follow" />
+    <meta name="generator" content={Astro.generator} />
     <meta name="theme-color" content="#181818" />
 
-    <!-- Open Graph / Social -->
+    <!-- Open Graph (Facebook · WhatsApp · LinkedIn) -->
+    <meta property="og:site_name" content="ArteFruta" />
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_CO" />
+    <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content="https://atllas1981.github.io/pulpasdefrutaartefruta/" />
-    <meta property="og:image" content="https://atllas1981.github.io/pulpasdefrutaartefruta/images/og-artefruta.jpg" />
-    <meta property="og:image:width" content="1424" />
-    <meta property="og:image:height" content="752" />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:secure_url" content={ogImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:image:type" content="image/jpeg" />
-    <meta property="og:image:alt" content="ArteFruta — Pulpas de fruta 100% naturales para gastronomía y coctelería en Colombia" />
-    <meta property="og:locale" content="es_CO" />
+    <meta property="og:image:alt" content={ogAlt} />
 
-    <!-- Twitter Card -->
+    <!-- Twitter / X Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="https://atllas1981.github.io/pulpasdefrutaartefruta/images/og-artefruta.jpg" />
-    <meta name="twitter:image:alt" content="ArteFruta — Pulpas de fruta 100% naturales para gastronomía y coctelería en Colombia" />
+    <meta name="twitter:image" content={ogImageUrl} />
+    <meta name="twitter:image:alt" content={ogAlt} />
 
     <!-- Schema.org JSON-LD Local SEO WholesaleStore -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WholesaleStore",
-        "@id": "https://atllas1981.github.io/pulpasdefrutaartefruta/#wholesalestore",
-        "name": "Pulpas de Fruta ArteFruta",
-        "description": "Proveedor mayorista de pulpas de fruta 100% naturales congeladas a -18°C para restaurantes, cafeterías, hoteles, reposterías y barras de coctelería.",
-        "image": "https://atllas1981.github.io/pulpasdefrutaartefruta/images/og-artefruta.jpg",
-        "url": "https://atllas1981.github.io/pulpasdefrutaartefruta/",
-        "telephone": "+573177963888",
-        "priceRange": "$$",
-        "currenciesAccepted": "COP",
-        "paymentAccepted": "Cash, Credit Card, Bank Transfer, Nequi, Daviplata",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Centroabastos, Bodega 9 Local 111 (Punto de Venta) y Bodega 13 Local 3B (Planta de Producción)",
-          "addressLocality": "Bucaramanga",
-          "addressRegion": "Santander",
-          "postalCode": "680005",
-          "addressCountry": "CO"
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WholesaleStore",
+      "@id": "https://atllas1981.github.io/pulpasdefrutaartefruta/#wholesalestore",
+      "name": "Pulpas de Fruta ArteFruta",
+      "description": "Proveedor mayorista de pulpas de fruta 100% naturales congeladas a -18°C para restaurantes, cafeterías, hoteles, reposterías y barras de coctelería.",
+      "image": ogImageUrl,
+      "url": "https://atllas1981.github.io/pulpasdefrutaartefruta/",
+      "telephone": "+573177963888",
+      "priceRange": "$$",
+      "currenciesAccepted": "COP",
+      "paymentAccepted": "Cash, Credit Card, Bank Transfer, Nequi, Daviplata",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Centroabastos, Bodega 9 Local 111 (Punto de Venta) y Bodega 13 Local 3B (Planta de Producción)",
+        "addressLocality": "Bucaramanga",
+        "addressRegion": "Santander",
+        "postalCode": "680005",
+        "addressCountry": "CO"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 7.0872,
+        "longitude": -73.1614
+      },
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Área Metropolitana de Bucaramanga",
+          "containsPlace": [
+            { "@type": "City", "name": "Bucaramanga" },
+            { "@type": "City", "name": "Floridablanca" },
+            { "@type": "City", "name": "Girón" },
+            { "@type": "City", "name": "Piedecuesta" }
+          ]
         },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 7.0872,
-          "longitude": -73.1614
-        },
-        "areaServed": [
-          {
-            "@type": "AdministrativeArea",
-            "name": "Área Metropolitana de Bucaramanga",
-            "containsPlace": [
-              { "@type": "City", "name": "Bucaramanga" },
-              { "@type": "City", "name": "Floridablanca" },
-              { "@type": "City", "name": "Girón" },
-              { "@type": "City", "name": "Piedecuesta" }
-            ]
-          },
-          {
-            "@type": "AdministrativeArea",
-            "name": "Cobertura Santander e Interdepartamental",
-            "containsPlace": [
-              { "@type": "City", "name": "Cúcuta" },
-              { "@type": "City", "name": "Barrancabermeja" },
-              { "@type": "City", "name": "San Gil" },
-              { "@type": "City", "name": "Valledupar" },
-              { "@type": "City", "name": "Santa Marta" },
-              { "@type": "City", "name": "Cartagena" },
-              { "@type": "City", "name": "Barranquilla" }
-            ]
-          }
-        ]
-      }
-    </script>
+        {
+          "@type": "AdministrativeArea",
+          "name": "Cobertura Santander e Interdepartamental",
+          "containsPlace": [
+            { "@type": "City", "name": "Cúcuta" },
+            { "@type": "City", "name": "Barrancabermeja" },
+            { "@type": "City", "name": "San Gil" },
+            { "@type": "City", "name": "Valledupar" },
+            { "@type": "City", "name": "Santa Marta" },
+            { "@type": "City", "name": "Cartagena" },
+            { "@type": "City", "name": "Barranquilla" }
+          ]
+        }
+      ]
+    })} />
 
     <!-- Google Fonts: Manrope (Headings) & Inter (Interface) — Preconnect & Non-blocking Preload -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
