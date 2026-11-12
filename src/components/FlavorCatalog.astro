@@ -206,15 +206,12 @@ const flavors: Flavor[] = [
         <h2
           class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#F4F3ED] font-heading mb-3 text-wrap:balance"
         >
-          10 sabores seleccionados para alta rotación en gastronomía y
-          coctelería
+          Catálogo de pulpa de fruta institucional y precios al por mayor para restaurantes
         </h2>
         <p
           class="text-base sm:text-lg text-[#B8C0BA] font-sans text-wrap:pretty leading-relaxed"
         >
-          Fichas técnicas estandarizadas con control de grados Brix y acidez.
-          Muestras refrigeradas para pruebas en cocina o barra disponibles en
-          cada ficha. Bolsas herméticas de 250g, 500g y 1.000g selladas a -18°C.
+          Fichas técnicas estandarizadas con control de grados Brix y acidez en bolsas herméticas de 250g, 500g y 1.000g selladas a -18°C. Consulta el <strong class="text-[#F4F3ED] font-semibold">precio de pulpa de fruta congelada al por mayor</strong> directamente por WhatsApp. Diseñamos escalas comerciales para optimizar los <strong class="text-[#F4F3ED] font-semibold">insumos para restaurantes</strong> y barras.
         </p>
       </div>
 
@@ -385,9 +382,11 @@ const flavors: Flavor[] = [
                   </span>
                 </div>
 
-                <div class="mb-1.5">
-                  <h3 class="text-xl sm:text-2xl font-bold font-heading text-[#F4F3ED] group-hover:text-[#36C98F] transition-colors tracking-tight text-wrap:balance">
-                    {flavor.name}
+                <div class="mb-2">
+                  <h3 class="font-heading text-[#F4F3ED] tracking-tight text-wrap:balance">
+                    <span class="text-xl sm:text-2xl font-bold block text-[#F4F3ED] group-hover:text-[#36C98F] transition-colors">{flavor.name}</span>
+                    <span class="sr-only"> — </span>
+                    <span class="text-xs font-semibold text-[#36C98F] block font-sans tracking-normal mt-0.5">Pulpa de {flavor.name.toLowerCase()} al por mayor para restaurantes y barras</span>
                   </h3>
                 </div>
 
@@ -696,7 +695,7 @@ const flavors: Flavor[] = [
             <span>${item.categoryLabel} · 100% Fruta Natural a -18°C</span>
           </div>
           <h3 id="modal-title" class="text-2xl sm:text-3xl font-bold font-heading text-[#F4F3ED] mb-2 tracking-tight">
-            Pulpa de ${item.name} ${item.variety ? `<span class="text-[#B8C0BA] font-normal text-lg sm:text-xl">(${item.variety})</span>` : ""}
+            Pulpa de ${item.name} al por mayor para restaurantes y barras ${item.variety ? `<span class="text-[#B8C0BA] font-normal text-lg sm:text-xl">(${item.variety})</span>` : ""}
           </h3>
           <p class="text-sm text-[#B8C0BA] font-sans leading-relaxed">
             ${item.profile}

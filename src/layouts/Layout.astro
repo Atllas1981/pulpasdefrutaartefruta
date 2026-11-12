@@ -7,18 +7,18 @@ interface Props {
 }
 
 const {
-  title = "ArteFruta | Pulpa de Fruta Natural en Bucaramanga",
-  description = "Descubre ArteFruta: pulpas de fruta de calidad al por mayor en Bucaramanga. Variedad, sabor y calidad para tu negocio."
+  title = "Pulpas de Fruta al por Mayor en Bucaramanga | Proveedor HORECA",
+  description = "Fábrica y distribuidora de pulpa de fruta congelada al por mayor para restaurantes, hoteles y cafeterías. 100% natural, sin mermas y con despacho en frío a -18°C."
 } = Astro.props;
 
 // OG-specific: shorter versions within character limits
 // og:title ≤ 60 chars, og:description ≤ 150 chars
 const ogTitle = title.length <= 60
   ? title
-  : "ArteFruta | Pulpa de Fruta Natural en Bucaramanga";
+  : "Pulpas de Fruta al por Mayor | ArteFruta";
 const ogDescription = description.length <= 150
   ? description
-  : "Descubre ArteFruta: pulpas de fruta de calidad al por mayor en Bucaramanga. Variedad, sabor y calidad para tu negocio.";
+  : "Fábrica y distribuidora de pulpa de fruta al por mayor para restaurantes y hoteles. 100% natural, sin mermas y despacho a -18°C.";
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
