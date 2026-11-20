@@ -1,5 +1,89 @@
 ---
+<<<<<<< HEAD
 import { faqs } from '../data/faqs';
+=======
+interface FaqItem {
+  question: string;
+  intro: string;
+  bullets: string[];
+}
+
+const faqs: FaqItem[] = [
+  {
+    question: "¿Cuál es el pedido mínimo para despachos como proveedores de pulpa de fruta?",
+    intro: "Flexibilidad total de compra según las necesidades de tu establecimiento:",
+    bullets: [
+      "<strong class='text-[#F4F3ED] font-semibold'>Venta física sin mínimo:</strong> Puedes llevar desde <strong>1 sola pulpa</strong> (250g, 500g o 1.000g) en nuestro punto comercial en <strong>Centroabastos (Bodega 9, Local 111, Bucaramanga)</strong>.",
+      "<strong class='text-[#F4F3ED] font-semibold'>Despachos en el Área Metropolitana:</strong> Entregas programadas a domicilio para restaurantes, cafeterías y barras coordinadas por <strong>WhatsApp (+57 317 7963888)</strong>.",
+      "<strong class='text-[#F4F3ED] font-semibold'>Suministro institucional por volumen:</strong> Precios preferenciales y escalas de descuento para compras periódicas como insumos para restaurantes, hoteles y casinos."
+    ]
+  },
+  {
+    question: "¿Qué cobertura de envíos tienen como distribuidora de pulpa de fruta y quién asume el flete en frío?",
+    intro: "Cobertura metropolitana e interdepartamental cuidando estrictamente la cadena de frío:",
+    bullets: [
+      "<strong class='text-[#F4F3ED] font-semibold'>Retiro en punto físico ($0 flete):</strong> Recoge directamente en nuestro punto de venta en <strong>Centroabastos (Bodega 9, Local 111)</strong> sin costo de transporte.",
+      "<strong class='text-[#F4F3ED] font-semibold'>Área Metropolitana de Bucaramanga:</strong> Entregas locales programadas en <strong>Bucaramanga, Floridablanca, Girón y Piedecuesta</strong>.",
+      "<strong class='text-[#F4F3ED] font-semibold'>Despachos interdepartamentales:</strong> Envíos refrigerados hacia <strong>Norte de Santander, Cesar, Magdalena, Bolívar y Atlántico</strong>.",
+      "<strong class='text-[#F4F3ED] font-semibold'>Modalidad de flete:</strong> Asumido por el cliente bajo modalidad de flete al cobro / contraentrega mediante transportadoras aliadas en frío."
+    ]
+  },
+  {
+    question: "¿Cuáles son las opciones de empaque y sus costos para proteger el producto?",
+    intro: "Tres alternativas térmicas pensadas para cada distancia y horario de traslado:",
+    bullets: [
+      "<strong class='text-[#F4F3ED] font-semibold'>Caja de cartón ($0 COP):</strong> Sin costo adicional. Recomendada para despachos locales o viajes en madrugada con recepción y refrigeración inmediata.",
+      "<strong class='text-[#F4F3ED] font-semibold'>Cava de icopor 8/10 ($50.000 COP):</strong> Opción económica y reutilizable con aislamiento térmico de hasta <strong>24 horas</strong>, ideal para media distancia.",
+      "<strong class='text-[#F4F3ED] font-semibold'>Cava de icopor nueva 10/10 ($90.000 COP):</strong> Estructura virgen de grado industrial con sellado hermético superior para rutas hacia la <strong>Costa Caribe y climas cálidos</strong>."
+    ]
+  },
+  {
+    question: "¿Cómo funciona la ultracongelación a -18°C y por qué elimina las mermas en restaurantes?",
+    intro: "Choque térmico continuo que congela la pulpa pura hasta el núcleo:",
+    bullets: [
+      "<strong class='text-[#F4F3ED] font-semibold'>Conservación al núcleo a -18°C:</strong> Previene la formación de macrocristales de hielo, reteniendo aroma fresco, color vivo, acidez natural y nutrientes.",
+      "<strong class='text-[#F4F3ED] font-semibold'>100% fruta pura sin agua ni aditivos:</strong> Sin dilución, sin conservantes químicos ni jarabes añadidos.",
+      "<strong class='text-[#F4F3ED] font-semibold'>Rendimiento 100% y 0% de merma:</strong> Eliminas hasta el 40% de pérdida por cáscaras o semillas de la fruta fresca, reduciendo tiempos de pelado y estandarizando costos por porción."
+    ]
+  },
+  {
+    question: "¿En qué presentaciones distribuyen pulpa de fruta institucional para el canal HORECA?",
+    intro: "Formatos herméticos sellados adaptados a la operación diaria de tu barra o cocina:",
+    bullets: [
+      "<strong class='text-[#F4F3ED] font-semibold'>Bolsas de 250g y 500g:</strong> Porciones controladas ideales para coctelería de autor, batidos frappé, pastelería fina y cafeterías.",
+      "<strong class='text-[#F4F3ED] font-semibold'>Bolsas de 1.000g (1 kg):</strong> Presentación de alto rendimiento para licuadoras industriales, buffets y cocinas de producción.",
+      "<strong class='text-[#F4F3ED] font-semibold'>Conservación lista:</strong> Empaque hermético que preserva el sabor y textura directamente en tu congelador a <strong>-18°C</strong>."
+    ]
+  },
+  {
+    question: "¿Cómo consultar el precio de la pulpa de fruta congelada al por mayor y cómo influye la temporada de cosecha?",
+    intro: "Precios mayoristas transparentes vinculados a la cosecha directa del campo colombiano:",
+    bullets: [
+      "<strong class='text-[#F4F3ED] font-semibold'>Cálculo de precios por temporada de cosecha:</strong> Los costos se optimizan según los ciclos de cosecha agrícola nacional en Colombia, asegurando el mejor costo por kilo para compras al por mayor.",
+      "<strong class='text-[#F4F3ED] font-semibold'>Cotización institucional en tiempo real:</strong> Escríbenos por <strong>WhatsApp (+57 317 7963888)</strong> para enviarte la lista oficial de precios institucionales del día y tablas de rendimiento por porción.",
+      "<strong class='text-[#F4F3ED] font-semibold'>Descuentos por escala:</strong> Tarifas comerciales especiales para compras continuas en restaurantes, hoteles y barras."
+    ]
+  },
+  {
+    question: "¿Ofrecen muestras a chefs y jefes de compras para pruebas de rendimiento en restaurantes y barras?",
+    intro: "Pruebas técnicas operativas sin costo ni compromiso para profesionales gastronómicos:",
+    bullets: [
+      "<strong class='text-[#F4F3ED] font-semibold'>Evaluación técnica:</strong> Diseñada para que chefs, baristas y jefes de compras verifiquen grados Brix, acidez (pH), cero mermas y textura en sus recetas.",
+      "<strong class='text-[#F4F3ED] font-semibold'>Solicitud rápida:</strong> Escríbenos por <strong>WhatsApp</strong> indicando qué sabores deseas probar en tu establecimiento.",
+      "<strong class='text-[#F4F3ED] font-semibold'>Catación presencial:</strong> Visítanos en nuestro punto comercial en <strong>Centroabastos (Bodega 9, Local 111)</strong> para evaluar el catálogo de temporada."
+    ]
+  },
+  {
+    question: "¿Cuál es la vida útil de las pulpas de fruta para restaurantes y cómo garantizar la cadena de frío a -18°C?",
+    intro: "Guía técnica de almacenamiento y cadena de frío para cocinas y barras profesionales:",
+    bullets: [
+      "<strong class='text-[#F4F3ED] font-semibold'>Hasta 12 meses de vida útil:</strong> Manteniendo las pulpas ininterrumpidamente a <strong>-18°C en congelador</strong>.",
+      "<strong class='text-[#F4F3ED] font-semibold'>Sin preservantes añadidos:</strong> La conservación se logra exclusivamente mediante choque térmico.",
+      "<strong class='text-[#F4F3ED] font-semibold'>Consumo una vez descongelada:</strong> Conservar en refrigeración (2°C a 6°C) y consumir dentro de las siguientes <strong>48 horas</strong>."
+    ]
+  }
+];
+>>>>>>> fb98f80dd2009e29b1bd2051388a685ac77342d0
 ---
 
 <section id="faq" class="py-24 sm:py-32 px-4 sm:px-6 bg-[#080A09] border-t border-[#313833]">
@@ -7,13 +91,22 @@ import { faqs } from '../data/faqs';
     
     <div class="text-center mb-16 scroll-reveal">
       <div class="text-xs font-semibold uppercase tracking-wider text-[#36C98F] mb-3">
+<<<<<<< HEAD
         Respuestas Claras para tu Negocio · Canal HORECA
+=======
+        Respuestas Claras para tu Negocio
+>>>>>>> fb98f80dd2009e29b1bd2051388a685ac77342d0
       </div>
       <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold font-heading tracking-tight text-[#F4F3ED] mb-4 text-wrap:balance">
         Preguntas frecuentes sobre insumos para restaurantes y pulpa de fruta al por mayor
       </h2>
+<<<<<<< HEAD
       <p class="text-base sm:text-lg text-[#B8C0BA] font-sans max-w-2xl mx-auto text-wrap:pretty">
         Todo lo que necesitas saber sobre nuestras pulpas ultracongeladas a -18°C al núcleo, sedes operativas en Centroabastos Bucaramanga, rendimiento sin mermas y protocolos de despacho.
+=======
+      <p class="text-base sm:text-lg text-[#B8C0BA] font-sans max-w-xl mx-auto text-wrap:pretty">
+        Todo lo que necesitas saber sobre nuestras pulpas ultracongeladas a -18°C, rendimiento operativo sin mermas y protocolos de despacho.
+>>>>>>> fb98f80dd2009e29b1bd2051388a685ac77342d0
       </p>
     </div>
 
@@ -48,4 +141,8 @@ import { faqs } from '../data/faqs';
     </div>
 
   </div>
+<<<<<<< HEAD
 </section>
+=======
+</section>
+>>>>>>> fb98f80dd2009e29b1bd2051388a685ac77342d0
