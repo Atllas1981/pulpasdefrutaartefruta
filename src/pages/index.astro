@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import TaglineReveal from '../components/TaglineReveal.astro';
+import FlavorCatalog from '../components/FlavorCatalog.astro';
+import PhysicalPlant from '../components/PhysicalPlant.astro';
+import FAQ from '../components/FAQ.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+import Footer from '../components/Footer.astro';
+import FloatingWhatsApp from '../components/FloatingWhatsApp.astro';
+---
+
+<Layout 
+  title="Pulpas de Fruta al por Mayor en Bucaramanga | Proveedor HORECA"
+  description="Fábrica y distribuidora de pulpa de fruta 100% natural congelada al núcleo a -18°C en Bucaramanga para restaurantes y hoteles. Sin mermas y despacho protegido en cavas."
+>
+  <Navbar />
+  
+  <main class="pb-28">
+    <Hero />
+    <FlavorCatalog />
+    <TaglineReveal />
+    <PhysicalPlant />
+    <FAQ />
+    <FinalCTA />
+  </main>
+
+  <Footer />
+  <FloatingWhatsApp />
+</Layout>

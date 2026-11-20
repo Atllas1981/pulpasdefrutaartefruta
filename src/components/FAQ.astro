@@ -1,0 +1,51 @@
+---
+import { faqs } from '../data/faqs';
+---
+
+<section id="faq" class="py-24 sm:py-32 px-4 sm:px-6 bg-[#080A09] border-t border-[#313833]">
+  <div class="max-w-4xl mx-auto">
+    
+    <div class="text-center mb-16 scroll-reveal">
+      <div class="text-xs font-semibold uppercase tracking-wider text-[#36C98F] mb-3">
+        Respuestas Claras para tu Negocio · Canal HORECA
+      </div>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold font-heading tracking-tight text-[#F4F3ED] mb-4 text-wrap:balance">
+        Preguntas frecuentes sobre insumos para restaurantes y pulpa de fruta al por mayor
+      </h2>
+      <p class="text-base sm:text-lg text-[#B8C0BA] font-sans max-w-2xl mx-auto text-wrap:pretty">
+        Todo lo que necesitas saber sobre nuestras pulpas ultracongeladas a -18°C al núcleo, sedes operativas en Centroabastos Bucaramanga, rendimiento sin mermas y protocolos de despacho.
+      </p>
+    </div>
+
+    <div class="space-y-4">
+      {faqs.map((faq) => (
+        <details 
+          class="group rounded-2xl border border-[#313833] bg-[#171B19] p-5 sm:p-6 transition-all duration-300 open:border-[#36C98F]/40 open:bg-[#1c221f] scroll-reveal"
+        >
+          <summary class="flex cursor-pointer items-center justify-between list-none select-none min-h-[44px] py-3 focus:outline-none focus:ring-2 focus:ring-[#36C98F]/30 rounded-lg">
+            <h3 class="text-base sm:text-lg font-semibold font-heading text-[#F4F3ED] pr-4 m-0 leading-snug">
+              {faq.question}
+            </h3>
+            <span class="ml-2 flex-shrink-0 text-[#36C98F] transition-transform duration-300 group-open:rotate-180">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </span>
+          </summary>
+          <div class="mt-4 pt-4 border-t border-[#313833] text-sm sm:text-base text-[#B8C0BA] font-sans leading-relaxed">
+            <p class="mb-3 text-xs sm:text-sm font-medium text-[#F4F3ED]/90">{faq.intro}</p>
+            <ul class="space-y-2.5">
+              {faq.bullets.map((bullet) => (
+                <li class="text-xs sm:text-sm text-[#B8C0BA] leading-relaxed flex items-start gap-2.5">
+                  <span class="text-[#36C98F] text-xs mt-1 shrink-0" aria-hidden="true">●</span>
+                  <span set:html={bullet} />
+                </li>
+              ))}
+            </ul>
+          </div>
+        </details>
+      ))}
+    </div>
+
+  </div>
+</section>

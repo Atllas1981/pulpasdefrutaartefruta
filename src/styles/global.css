@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: "Manrope", sans-serif;
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "Geist Mono", monospace;
+
+  /* Paleta cromática oficial B2B HORECA */
+  --color-brand-bg: #080A09;
+  --color-brand-surface: #171B19;
+  --color-brand-surface-hover: #1F2422;
+  --color-brand-border: #313833;
+  --color-brand-border-subtle: #242A26;
+  --color-brand-text: #F4F3ED;
+  --color-brand-text-muted: #B8C0BA;
+  --color-brand-emerald: #36C98F;
+  --color-brand-emerald-hover: #2EB37E;
+  --color-brand-cyan: #55D6E8;
+  --color-brand-amber: #F5B942;
+  --color-brand-whatsapp: #25D366;
+}
+
+:root {
+  --bg-main: #080A09;
+  --surface-card: #171B19;
+  --surface-card-hover: #1F2422;
+  --border-main: #313833;
+  --border-subtle: #242A26;
+  --text-main: #F4F3ED;
+  --text-muted: #B8C0BA;
+  --cta-emerald: #36C98F;
+  --cta-emerald-hover: #2EB37E;
+  --tech-cyan: #55D6E8;
+  --metric-amber: #F5B942;
+  --whatsapp-green: #25D366;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-family: var(--font-sans);
+    background-color: #080A09;
+    color: #F4F3ED;
+    color-scheme: dark;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #080A09;
+    color: #F4F3ED;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: #F4F3ED;
+    font-weight: 700;
+    text-wrap: balance;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+  }
+
+  p, li, blockquote {
+    font-family: var(--font-sans);
+    color: #B8C0BA;
+    text-wrap: pretty;
+  }
+
+  strong, b {
+    color: #F4F3ED;
+    font-weight: 600;
+  }
+
+  /* Monospace / Tabular for numeric indicators */
+  .font-mono-data {
+    font-family: var(--font-sans);
+    font-feature-settings: "tnum" 1;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom smooth curve per landing-page-design B7 */
+.fluid-transition {
+  transition: all 700ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+/* Scroll reveal initial state */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  filter: blur(4px);
+  transition: opacity 800ms cubic-bezier(0.32, 0.72, 0, 1), transform 800ms cubic-bezier(0.32, 0.72, 0, 1), filter 800ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* Scroll hint horizontal nudge animation (GPU Accelerated - Zero Layout Reflow) */
+@keyframes scrollNudge {
+  0% {
+    transform: translateX(0);
+  }
+  30% {
+    transform: translateX(15px);
+  }
+  60% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-scroll-nudge,
+.animate-scroll-hint {
+  animation: scrollNudge 1.2s cubic-bezier(0.25, 1, 0.5, 1) both;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-scroll-nudge,
+  .animate-scroll-hint {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* Lenis CSS */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
