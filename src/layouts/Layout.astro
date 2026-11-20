@@ -1,9 +1,6 @@
 ---
 import '../styles/global.css';
-<<<<<<< HEAD
 import { faqs } from '../data/faqs';
-=======
->>>>>>> fb98f80dd2009e29b1bd2051388a685ac77342d0
 
 interface Props {
   title?: string;
@@ -11,30 +8,17 @@ interface Props {
 }
 
 const {
-<<<<<<< HEAD
   title = "Pulpas de Fruta al por Mayor en Bucaramanga | Pulpas de Fruta ArteFruta",
   description = "Fábrica y distribuidora de pulpa de fruta congelada al por mayor en Centroabastos Bucaramanga para restaurantes, hoteles y bares. 100% natural, sin mermas y a -18°C."
 } = Astro.props;
 
 // OG-specific: within character limits
-=======
-  title = "Pulpas de Fruta al por Mayor en Bucaramanga | Proveedor HORECA",
-  description = "Fábrica y distribuidora de pulpa de fruta congelada al por mayor para restaurantes, hoteles y cafeterías. 100% natural, sin mermas y con despacho en frío a -18°C."
-} = Astro.props;
-
-// OG-specific: shorter versions within character limits
-// og:title ≤ 60 chars, og:description ≤ 150 chars
->>>>>>> fb98f80dd2009e29b1bd2051388a685ac77342d0
 const ogTitle = title.length <= 60
   ? title
   : "Pulpas de Fruta al por Mayor | ArteFruta";
 const ogDescription = description.length <= 150
   ? description
-<<<<<<< HEAD
   : "Fábrica y distribuidora de pulpa de fruta al por mayor para restaurantes y hoteles. 100% natural, sin mermas y despacho en cavas a -18°C.";
-=======
-  : "Fábrica y distribuidora de pulpa de fruta al por mayor para restaurantes y hoteles. 100% natural, sin mermas y despacho a -18°C.";
->>>>>>> fb98f80dd2009e29b1bd2051388a685ac77342d0
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
@@ -45,19 +29,15 @@ const canonicalURL = new URL(
   siteOrigin
 ).href;
 
-<<<<<<< HEAD
 // Enlace oficial a ficha y reseñas GBP (Google Business Profile)
 const gbpUrl = "https://g.page/r/CVpbASAcyEfcECE/review";
 
-=======
->>>>>>> fb98f80dd2009e29b1bd2051388a685ac77342d0
 // OG image — URL absoluta completa incluyendo base path del repositorio
 const ogImageUrl = new URL(
   `pulpasdefrutaartefruta/images/og-artefruta.jpg`,
   siteOrigin
 ).href;
 
-<<<<<<< HEAD
 const ogAlt = "Pulpas de Fruta ArteFruta, proveedor mayorista de pulpas congeladas en Bucaramanga";
 
 // Schema.org WholesaleStore
@@ -157,9 +137,6 @@ const faqSchema = {
     }
   }))
 };
-=======
-const ogAlt = "ArteFruta, pulpas de fruta al por mayor en Bucaramanga";
->>>>>>> fb98f80dd2009e29b1bd2051388a685ac77342d0
 ---
 
 <!doctype html>
@@ -183,11 +160,7 @@ const ogAlt = "ArteFruta, pulpas de fruta al por mayor en Bucaramanga";
     <meta name="theme-color" content="#181818" />
 
     <!-- Open Graph (Facebook · WhatsApp · LinkedIn) -->
-<<<<<<< HEAD
     <meta property="og:site_name" content="Pulpas de Fruta ArteFruta" />
-=======
-    <meta property="og:site_name" content="ArteFruta" />
->>>>>>> fb98f80dd2009e29b1bd2051388a685ac77342d0
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_CO" />
     <meta property="og:url" content={canonicalURL} />
@@ -207,7 +180,6 @@ const ogAlt = "ArteFruta, pulpas de fruta al por mayor en Bucaramanga";
     <meta name="twitter:image" content={ogImageUrl} />
     <meta name="twitter:image:alt" content={ogAlt} />
 
-<<<<<<< HEAD
     <!-- Schema.org JSON-LD Local SEO WholesaleStore + FAQPage -->
     <script
       type="application/ld+json"
@@ -219,60 +191,6 @@ const ogAlt = "ArteFruta, pulpas de fruta al por mayor en Bucaramanga";
         ]
       })}
     />
-=======
-    <!-- Schema.org JSON-LD Local SEO WholesaleStore -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "WholesaleStore",
-      "@id": "https://atllas1981.github.io/pulpasdefrutaartefruta/#wholesalestore",
-      "name": "Pulpas de Fruta ArteFruta",
-      "description": "Proveedor mayorista de pulpas de fruta 100% naturales congeladas a -18°C para restaurantes, cafeterías, hoteles, reposterías y barras de coctelería.",
-      "image": ogImageUrl,
-      "url": "https://atllas1981.github.io/pulpasdefrutaartefruta/",
-      "telephone": "+573177963888",
-      "priceRange": "$$",
-      "currenciesAccepted": "COP",
-      "paymentAccepted": "Cash, Credit Card, Bank Transfer, Nequi, Daviplata",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Centroabastos, Bodega 9 Local 111 (Punto de Venta) y Bodega 13 Local 3B (Planta de Producción)",
-        "addressLocality": "Bucaramanga",
-        "addressRegion": "Santander",
-        "postalCode": "680005",
-        "addressCountry": "CO"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 7.0872,
-        "longitude": -73.1614
-      },
-      "areaServed": [
-        {
-          "@type": "AdministrativeArea",
-          "name": "Área Metropolitana de Bucaramanga",
-          "containsPlace": [
-            { "@type": "City", "name": "Bucaramanga" },
-            { "@type": "City", "name": "Floridablanca" },
-            { "@type": "City", "name": "Girón" },
-            { "@type": "City", "name": "Piedecuesta" }
-          ]
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "Cobertura Santander e Interdepartamental",
-          "containsPlace": [
-            { "@type": "City", "name": "Cúcuta" },
-            { "@type": "City", "name": "Barrancabermeja" },
-            { "@type": "City", "name": "San Gil" },
-            { "@type": "City", "name": "Valledupar" },
-            { "@type": "City", "name": "Santa Marta" },
-            { "@type": "City", "name": "Cartagena" },
-            { "@type": "City", "name": "Barranquilla" }
-          ]
-        }
-      ]
-    })} />
->>>>>>> fb98f80dd2009e29b1bd2051388a685ac77342d0
 
     <!-- Google Fonts: Manrope (Headings) & Inter (Interface) — Preconnect & Non-blocking Preload -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
