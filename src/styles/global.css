@@ -46,6 +46,7 @@
     color: #F4F3ED;
     color-scheme: dark;
     scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
